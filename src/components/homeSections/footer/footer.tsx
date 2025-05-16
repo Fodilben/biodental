@@ -1,4 +1,5 @@
-import React from "react";
+import { Button } from "../../ui/button";
+import { Card, CardContent } from "../../ui/card";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -122,23 +123,17 @@ export const Footer = () => {
 
         {/* CTA Button - Desktop only */}
         <div className="hidden lg:flex items-start justify-center">
-          <a
-            href="#"
-            className="w-[205px] h-[40px] bg-[#263820] text-white rounded-[6px] shadow font-semibold text-[16px] flex items-center justify-center"
-          >
+          <Button className="w-[205px] h-[40px] bg-[#263820] text-white rounded-[6px] shadow font-semibold text-[16px]">
             Prendre rendez-vous
-          </a>
+          </Button>
         </div>
       </div>
 
       {/* Mobile CTA Button - Bottom of section on tablet and mobile */}
-      <div className="lg:hidden flex justify-center bg-red-500 mt-6">
-        <a
-          href="#"
-          className="w-[205px] h-[40px] bg-[#263820] text-white rounded-[6px] shadow font-semibold text-[16px] flex items-center justify-center"
-        >
+      <div className="lg:hidden flex justify-center mt-6">
+        <Button className="w-[205px] h-[40px] bg-[#263820] text-white rounded-[6px] shadow font-semibold text-[16px]">
           Prendre rendez-vous
-        </a>
+        </Button>
       </div>
 
       {/* Footer Bottom */}
