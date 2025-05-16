@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { FiPhone } from "react-icons/fi";
+import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -38,47 +38,101 @@ export  function PhonePopup({ open }: { open: boolean }) {
 
 export const Nav = () => {
   const [showPhone, setShowPhone] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed  w-[670px] h-16 top-[8px] left-1/2 -translate-x-1/2 z-[100]">
-      <Card className="h-16  bg-[#9aad92]/60 backdrop-blur-[5px] rounded-[50px] overflow-hidden border border-[#F7F7F5]">
-        <CardContent className="p-0">
-          <div className="relative w-full h-16 rounded-[50px] flex items-center justify-between px-6">
-            <img src="./logo.webp" alt="BioDental" className="h-8" />
-            <div className="flex gap-7 ">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.path}
-                  className="font-medium text-[#f7f7f5] text-[14px]  hover:underline focus:underline transition-colors duration-150"
+    <>
+      <nav className="fixed  w-[340px]  md:max-w-[670px]  h-16 top-[8px] left-1/2 -translate-x-1/2 z-[100] md:w-full lg:w-full">
+        <Card className="h-16 bg-[#9aad92]/55 backdrop-blur-[5px] rounded-[50px] overflow-hidden border-[2px] border-[#F7F7F5]">
+          <CardContent className="p-0">
+            <div className="relative w-full h-16 rounded-[50px] flex items-center justify-between px-6">
+              <img src="./logo.webp" alt="BioDental" className="h-8" />
+              <div className="hidden md:flex gap-7 ">
+                {navItems.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.path}
+                    className="font-medium text-[#f7f7f5] text-[14px] hover:underline focus:underline transition-colors duration-150"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+              <div className="relative flex items-center gap-2">
+                <button
+                  onClick={() => setShowPhone((v) => !v)}
+                  className="hidden items-center justify-center w-11 h-11 rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none sm:hidden md:flex"
+                  aria-label="Afficher les numéros de téléphone"
+                  type="button"
                 >
-                  {item.label}
-                </a>
-              ))}
+                  <FiPhone className="text-[#F7F7F5]" size={23} />
+                </button>
+                <button
+                  className="flex md:hidden items-center justify-center w-11 h-11 rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none"
+                  onClick={() => setMobileMenuOpen(true)}
+                  aria-label="Ouvrir le menu"
+                  type="button"
+                >
+                  <FiMenu className="text-[#F7F7F5]" size={28} />
+                </button>
+                {/* Overlay for click-away */}
+                {showPhone && (
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setShowPhone(false)}
+                    aria-label="Fermer le popup téléphone"
+                  />
+                )}
+                <PhonePopup open={showPhone} />
+              </div>
             </div>
-            <div className="relative">
-              <button
-                onClick={() => setShowPhone((v) => !v)}
-                className="flex items-center justify-center w-11 h-11 rounded-full  bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none"
-                aria-label="Afficher les numéros de téléphone"
-                type="button"
-              >
-                <FiPhone className="text-[#F7F7F5] " size={23} />
-              </button>
-              {/* Overlay for click-away */}
-              {showPhone && (
-                <div
-                  className="fixed inset-0 z-40"
-                  onClick={() => setShowPhone(false)}
-                  aria-label="Fermer le popup téléphone"
-                />
-              )}
-              <PhonePopup open={showPhone} />
+          </CardContent>
+        </Card>
+      </nav>
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed top-[8px] left-1/2 -translate-x-1/2 z-[200] flex flex-col bg-[#9aad92] rounded-xl px-2 py-1 gap-4 w-[340px] md:max-w-[670px] md:w-full animate-slideDownAndFadeIn"
+          style={{ height: "auto" }}
+        >
+          <div className="flex items-center justify-between  max-h-[100px] px-2">
+            <div className="flex items-center gap-2 max-w-[180px]">
+              <img src="./logo.webp" alt="BioDental" />
             </div>
+            <button
+              className="text-4xl text-[#222] p-2"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Fermer le menu"
+              type="button"
+            >
+              <FiX />
+            </button>
           </div>
-        </CardContent>
-      </Card>
-    </nav>
+          <div className="flex flex-col items-center gap-5 flex-1 justify-center">
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.path}
+                className="text-white text-[14px] font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex justify-end pr-4 pb-4">
+            <button
+              onClick={() => setShowPhone((v) => !v)}
+              className="flex items-center justify-center w-[43px] h-[43px] rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none"
+              aria-label="Afficher les numéros de téléphone"
+              type="button"
+            >
+              <FiPhone className="text-[#F7F7F5]" size={25} />
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -25,7 +25,6 @@ export default function Page() {
           <Reviews />
           <FAQ />
         </div>
-        <div className="fixed bottom-8 right-8 w-[142px] h-9 bg-[#F7F7F5] rounded-[10px] shadow-[0px_0.64px_1.15px_-1.12px_#00000042,0px_1.93px_3.48px_-2.25px_#0000003d,0px_5.11px_9.19px_-3.38px_#00000031,0px_16px_28.8px_-4.5px_#00000008]" />
       </div>
       <CTA />
       <Footer />

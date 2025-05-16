@@ -14,24 +14,22 @@ export const About = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-[#9aae92]">
+    <section className="w-full py-20 bg-[#9aae92] px-8 md:px-8 lg:px-0">
       <div className="container flex flex-col md:flex-row items-start gap-[50px] max-w-[1000px] mx-auto">
         <div
-          className="relative w-full md:w-[358px] h-[440px] rounded-[1000px_1000px_8px_8px] bg-cover bg-center"
-          style={{ backgroundImage: "url(..//image-7.png)" }}
+          className="relative w-full md:w-[358px] h-[440px] rounded-[1000px_1000px_8px_8px] bg-cover bg-center order-2 md:order-1"
+          style={{ backgroundImage: "url(..//image-7.png)" } }
         />
 
-        <div className="flex flex-col w-full md:w-[592px] items-start gap-[34px]">
-          <div className="w-full">
-            <h2 className="font-[var(--font-playfair)] font-bold text-[#2b3029] text-[45.5px] tracking-[-0.80px] leading-[60px]">
-              Behind Every Confident
-              <br />
-              Smile
+        <div className="flex flex-col w-full md:w-[592px] items-start gap-[34px] order-1 md:order-2">
+          <div className="w-full ">
+            <h2 className="font-playfair-important font-bold text-[#2b3029] text-[34px] md:text-[50px] tracking-[-0.80px] text-center md:text-left">
+              Derrière chaque sourire confiant
             </h2>
           </div>
 
           <Card className="w-full bg-transparent border-none shadow-none">
-            <CardContent className="p-0 space-y-6">
+            <CardContent className="p-0 space-y-6 hidden md:block">
               <div className="space-y-1">
                 <p className="text-[#f7f7f5] text-[17.3px] tracking-[0.03px] leading-[25.2px] font-[var(--font-manrope)]">
                   At{" "}
@@ -64,7 +62,7 @@ export const About = () => {
                 </div>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-0 md:space-y-1">
                 <p className="text-[#f7f7f5] text-[17.3px] tracking-[0.18px] leading-[25.2px] font-[var(--font-manrope)]">
                   Since graduating in 2019 from Annaba, I've pursued advanced
                 </p>
@@ -78,6 +76,17 @@ export const About = () => {
                   connection behind every case.
                 </p>
               </div>
+            </CardContent>
+            <CardContent className="p-0 space-y-6  block md:hidden">
+              <p className="text-[#f7f7f5] text-[16px] tracking-[0.18px] leading-[25.2px] ">
+                Chez <span>Biodental</span> , nous pensons que la grande
+                dentisterie commence par l'écoute. Je suis Dr.Fetnaci Sofian -
+                un dentiste conduit par une philosophie simple: mettez les gens
+                avant les procédures, et visez toujours un résultat naturel et
+                durable. Depuis diplômé en 2019 de Annaba, mais ce qui définit
+                vraiment mon travail est la connexion humaine, la connexion
+                humaine.
+              </p>
             </CardContent>
           </Card>
         </div>
