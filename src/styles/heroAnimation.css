@@ -1,0 +1,84 @@
+/* Full-screen background with black-to-white radial gradient */
+.about-hero-section .about-hero-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, #222 100%, #fff 100%);
+  opacity: 0.60;
+  filter: blur(120px);
+}
+
+/* 3 rotating blurred colored circles */
+.about-hero-section .about-hero-orbit-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.42;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.about-hero-section .about-hero-orbit-circle-1 {
+  background: #ffffff;
+  animation: orbitCircle1 8s linear infinite;
+  opacity: 0.95;
+}
+.about-hero-section .about-hero-orbit-circle-2 {
+  background: #9fedb7;
+  animation: orbitCircle2 12s linear infinite reverse;
+}
+.about-hero-section .about-hero-orbit-circle-3 {
+  background: #fff;
+  animation: orbitCircle3 10s linear infinite;
+  opacity: 0.85;
+}
+.about-hero-section .about-hero-orbit-circle-4 {
+  background: #a4ed82;
+  animation: orbitCircle4 10s linear infinite;
+  opacity: 0.35;
+}
+.about-hero-section .about-hero-orbit-circle-5 {
+  background: #fff8f3;
+  /* background: #76946A; */
+  animation: orbitCircle5 8s linear infinite reverse;
+  opacity: 0.70;
+}
+.about-hero-section .about-hero-orbit-circle-6 {
+  background: #fff;
+  animation: orbitCircle6 12s linear infinite;
+  opacity: 0.82;
+}
+
+@keyframes orbitCircle1 {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(-220px) scale(1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(-220px) scale(1); }
+}
+@keyframes orbitCircle2 {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(220px) scale(1.1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(220px) scale(1.1); }
+}
+@keyframes orbitCircle3 {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateY(220px) scale(0.95); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateY(220px) scale(0.95); }
+}
+@keyframes orbitCircle4 {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateY(-180px) scale(1.1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateY(-180px) scale(1.1); }
+}
+@keyframes orbitCircle5 {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(-140px) scale(0.9); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(-140px) scale(0.9); }
+}
+@keyframes orbitCircle6 {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateY(140px) scale(1.2); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateY(140px) scale(1.2); }
+} 

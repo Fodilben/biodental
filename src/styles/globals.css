@@ -1,0 +1,82 @@
+/* Custom delimiter width for react-before-after-slider-component */
+.before-after-slider__delimiter {
+  width: 2px !important;
+  min-width: 2px !important;
+  max-width: 2px !important;
+  background: #fff !important;
+  border-radius: 2px;
+  box-shadow: 0 0 8px 2px rgba(0,0,0,0.10);
+}
+
+/* AboutHero animated background circles */
+.about-hero-bg-blur {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 900px;
+  height: 900px;
+  background: #000;
+  opacity: 0.31;
+  /* filter: blur(120px); */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-hero-rotating-circles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  animation: aboutHeroRotateScale 8s ease-in-out infinite;
+}
+
+.about-hero-colored-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* filter: blur(48px); */
+  opacity: 1;
+  pointer-events: none;
+}
+.about-hero-colored-circle-1 {
+  background: #3ec6a8;
+  left: 0;
+  top: 0;
+}
+.about-hero-colored-circle-2 {
+  background: #3a7bd5;
+  left: 60px;
+  top: 40px;
+}
+.about-hero-colored-circle-3 {
+  background: #7ee8fa;
+  left: 30px;
+  top: 100px;
+}
+
+/* @keyframes aboutHeroRotateScale {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(12deg) scale(1.08);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(18deg) scale(0.93);
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(-8deg) scale(1.07);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+} */

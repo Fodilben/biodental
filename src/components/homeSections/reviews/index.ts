@@ -1,0 +1,2 @@
+
+import { Reviews } from './page';
