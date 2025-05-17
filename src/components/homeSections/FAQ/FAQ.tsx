@@ -27,7 +27,7 @@ export const FAQ = () => {
   ];
 
   return (
-    <div className="w-full py-20 bg-[#9aae92]">
+    <div className="w-full py-[60px] md:py-20 bg-[#9aae92] px-[20px] md:px-[30px] lg:px-0">
       <div className="max-w-[1050px] mx-auto relative">
         {/* FAQ Title */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#9aae92] px-3">
@@ -37,7 +37,7 @@ export const FAQ = () => {
         </div>
 
         {/* FAQ Card */}
-        <Card className="rounded-2xl border-2 border-solid border-[#f7f7f5] mt-8 pt-14">
+        <Card className="rounded-2xl border-2 border-solid border-[#f7f7f5] mt-0   md:mt-8  pt-5 md:pt-14">
           <CardContent className="p-8">
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (

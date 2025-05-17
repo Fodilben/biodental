@@ -1,5 +1,9 @@
+'use client'
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
+import Link from "next/link";
+import { useState } from "react";
+import { FiPhone } from "react-icons/fi";
 
 export const Footer = () => {
   // Footer navigation data
@@ -29,18 +33,24 @@ export const Footer = () => {
     { src: "/icon-3.svg", alt: "TikTok" },
   ];
 
+  // State for phone panel
+  const [showPhonePanel, setShowPhonePanel] = useState(false);
+  const phoneNumbers = [
+    { number: "07 87 90 78 32", href: "tel:0787907832" },
+    { number: "06 59 77 27 37", href: "tel:0659772737" },
+  ];
+
   return (
-    <footer className="w-full  bg-white border border-[#83967b] rounded-[8px] px-4 md:px-3   py-9  mx-auto">
-      <div className="grid  xl:grid-cols-3  md:place-items-center lg:place-items-center xl:place-items-start    grid-rows-1 sm:grid-cols-1  gap-4">
-        {/* Main CTA Button */}
-        
+    <>
+      <footer className="w-full  bg-white border border-[#83967b] rounded-[8px] px-4 md:px-3   py-9  mx-auto">
+        <div className="grid  xl:grid-cols-3  md:place-items-center lg:place-items-center xl:place-items-start    grid-rows-1 sm:grid-cols-1  gap-4">
+          {/* Main CTA Button */}
           <div className="flex flex-col items-center justify-center md:hidden xl:flex  order-last md:order-first">
             <button className="w-[250px] h-[40px] bg-[#263820] text-white rounded-[6px] shadow font-bold text-[20px] flex items-center justify-center mb-6">
               Prendre rendez-vous
             </button>
           </div>
           {/* Footer Navigation Sections */}
-
           <div className="flex flex-col md:flex-row  pl-3 justify-between gap-8 sm:order-first md:order-last">
             {/* Services and contact section*/}
             <div className="flex gap-2">
@@ -101,7 +111,6 @@ export const Footer = () => {
                 </ul>
               </div>
             </div>
-
             <div className="flex  gap-6 ">
               <div className="flex flex-col min-w-[180px]">
                 <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
@@ -144,28 +153,60 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-      {/* Footer Bottom */}
-      <div className="flex justify-center items-center md:px-16">
-        <div className="flex flex-col md:flex-row justify-between font-[460] items-center mt-6 text-[15px] w-full">
-          <div className="mb-2 md:mb-0 flex flex-wrap items-center gap-1 tracking-[-0.77px] text-[#51634B]">
-            <span className="">© BioDental clinic 2024 |</span>
-            <a href="#" className=" hover:underline">
-              Privacy Policy
-            </a>
-            <span className="">|</span>
-            <a href="#" className="text-[#2266ff] hover:underline hidden md:block">
-              Accessibility Statement
-            </a>
-          </div>
-          <div className="flex items-center gap-2 font-normal text-right underline">
-            <a href="#" className="text-[#2266ff] hover:underline">
-              Made <span className="text-black  no-underline">by</span> Ayoub
-              SADAOUI
-            </a>
+        {/* Footer Bottom */}
+        <div className="flex justify-center items-center md:px-16">
+          <div className="flex flex-col md:flex-row justify-between font-[460] items-center mt-6 text-[15px] w-full">
+            <div className="mb-2 md:mb-0 flex flex-wrap items-center gap-1 tracking-[-0.77px] text-[#51634B]">
+              <span className="">© BioDental clinic 2024 |</span>
+              <a href="#" className=" hover:underline">
+                Privacy Policy
+              </a>
+              <span className="">|</span>
+              <a
+                href="#"
+                className="text-[#2266ff] hover:underline hidden md:block"
+              >
+                Accessibility Statement
+              </a>
+            </div>
+            <div className="flex items-center gap-2 font-normal text-right underline">
+              <a href="#" className="text-[#2266ff] hover:underline">
+                Made <span className="text-black  no-underline">by</span> Ayoub
+                SADAOUI
+              </a>
+            </div>
           </div>
         </div>
+      </footer>
+      {/* Fixed phone button and panel for mobile */}
+      <div className="md:hidden">
+        {/* Phone panel */}
+        {showPhonePanel && (
+          <div className="fixed bottom-[180px] right-6 z-50 flex flex-col rounded-xl border border-[#b2c2a6] bg-[#83967b] 83967b  min-w-[180px]">
+            {phoneNumbers.map((item, idx) => (
+              <a
+                key={item.number}
+                href={item.href}
+                className={`flex items-center gap-2 ${idx === 0 ? "border-b-[1.5px] border-white" : ""} px-4 py-2 text-[#000]  h-[52px] text-base font-medium ${idx === 0 ? "rounded-t-xl" : ""} ${idx === phoneNumbers.length - 1 ? "rounded-b-xl" : "border-t border-white"}`}
+                style={{ minWidth: 160 }}
+              >
+                <FiPhone className="text-[#fff]" size={18} />
+                <span>{item.number}</span>
+              </a>
+            ))}
+          </div>
+        )}
+        {/* Floating phone button */}
+        <button
+          className="fixed bottom-[120px] right-6 z-50 flex items-center justify-center w-[47px] h-[47px] rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none shadow-lg"
+          aria-label="Afficher les numéros de téléphone"
+          type="button"
+          onClick={() => setShowPhonePanel((v) => !v)}
+        >
+          <FiPhone className="text-[#F7F7F5]" size={28} />
+        </button>
       </div>
-    </footer>
+    </>
   );
 };
 

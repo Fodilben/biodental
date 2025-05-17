@@ -14,11 +14,11 @@ const AboutHero = () => {
       <div className="about-hero-orbit-circle about-hero-orbit-circle-4" />
       <div className="about-hero-orbit-circle about-hero-orbit-circle-5" />
       <div className="about-hero-orbit-circle about-hero-orbit-circle-6" />
-      <div className="text-center max-w-4xl mx-auto flex flex-col items-center justify-center py-10  z-50 ">
+      <div className="text-center max-w-4xl mx-auto flex flex-col items-center justify-center py-10  z-50  ">
         <div className="py-10">
-          <p className="text-[40px] text-[#3A4B35] indent-5 ">
+          <p className="text-[27px] md:text-[40px] text-[#3A4B35] indent-5 ">
             <span className="font-medium">Chez</span>
-            <span className="text-[55px] italic font-bold font-playfair-important  pl-1 leading-1">
+            <span className="text-[34px] md:text-[55px] italic font-bold font-playfair-important  pl-1 leading-1">
               BioDental
             </span>
             <span className="font-extralight">

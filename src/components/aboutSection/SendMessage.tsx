@@ -87,7 +87,7 @@ const SendMessage = () => {
         className="w-full max-w-md bg-[#9aae92] rounded-xl flex flex-col items-center px-8 py-10"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-[2.5rem] font-bold font-playfair-important text-[#2b3029] mb-8 text-center flex items-center justify-center">
+        <h2 className="text-[34px] md:text-[50px] font-bold font-playfair-important text-[#2b3029] mb-8 text-center flex items-center justify-center">
           Contactez-nous <EnvelopeIcon />
         </h2>
         <div className="w-full mb-4">
