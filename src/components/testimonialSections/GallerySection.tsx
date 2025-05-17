@@ -18,7 +18,7 @@ const CustomDelimiterIcon = () => (
 
 const GallerySection = () => (
   <section
-    className="w-full min-h-screen py-12 px-2 md:px-0"
+    className="w-full min-h-screen py-12 px-[50px] md:px-0"
     style={{ background: "#9AAF94" }}
   >
     <h2

@@ -2,22 +2,22 @@ import Image from "next/image";
 
 const ServicesSec = () => {
   return (
-    <section className="max-w-[1000px] mx-auto bg-transparent py-16 flex flex-col items-center">
+    <section className="max-w-[1000px] mx-auto bg-transparent px-[20px] md:px-0 py-16 flex flex-col items-center">
       <h2 className="text-[2.5rem] md:text-[2.8rem] font-bold font-playfair-important text-[#243520] mb-8 text-center">
         Nos services complets ..
       </h2>
-      <div className=" rounded-xl border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-2  md:p-8 gap-8 shadow-md">
-        <div className="flex-1 flex justify-center items-center min-w-[320px]">
+      <div className=" rounded-xl border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px] md:p-8  gap-8 shadow-md">
+        <div className="flex-1 flex justify-center items-center  min-w-full md:min-w-[320px] ">
           <Image
             src="/services/services1.png"
             alt="Préservation des dents"
             width={600}
             height={400}
-            className="rounded-3xl object-cover w-full h-[320px] md:h-[370px] max-w-full"
+            className="rounded-3xl object-cover w-full h-[250px] md:h-[370px] max-w-full"
             style={{ objectPosition: "center" }}
           />
         </div>
-        <div className="flex-1  px-2 md:px-8  ">
+        <div className="flex-1  px-0 md:px-8  ">
           <h3 className="text-2xl md:text-3xl font-semibold text-[#243520] mb-5">
             1. Préservation des dents
           </h3>
@@ -32,8 +32,8 @@ const ServicesSec = () => {
           </p>
         </div>
       </div>
-      <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-2  md:p-8 gap-8 shadow-md">
-        <div className="flex-1  px-2 md:px-8  ">
+      <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px]  md:p-8 gap-8 shadow-md">
+        <div className="flex-1  px-0 md:px-8  ">
           <h3 className="text-2xl md:text-3xl font-semibold text-[#243520] mb-5">
             2. Implants dentaires
           </h3>
@@ -49,25 +49,25 @@ const ServicesSec = () => {
             naturelles, favorisant une santé bucco-dentaire à long terme.
           </p>
         </div>
-        <div className="flex-1 flex justify-center items-center min-w-[320px]">
+        <div className="flex-1 flex justify-center items-center min-w-full md:min-w-[320px]">
           <Image
             src="/services/services2.png"
             alt="Préservation des dents"
             width={600}
             height={400}
-            className="rounded-3xl object-cover w-full h-[320px] md:h-[370px] max-w-full"
+            className="rounded-3xl object-cover w-full h-[250px] md:h-[370px] max-w-full"
             style={{ objectPosition: "center" }}
           />
         </div>
       </div>
-      <div className=" rounded-xl  mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-2  md:p-8 gap-8 shadow-md h-fit min-h-[360px]">
-        <div className="flex-1 flex justify-center items-center min-w-[320px]">
+      <div className=" rounded-xl  mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px]  md:p-8 gap-8 shadow-md h-fit min-h-[360px]">
+        <div className="flex-1 flex justify-center items-center min-w-full md:min-w-[320px]">
           <Image
             src="/services/services3.png"
             alt="Préservation des dents"
             width={600}
             height={400}
-            className="rounded-3xl object-cover w-full h-full  max-w-full"
+            className="rounded-3xl object-cover w-full h-[250px] md:h-[370px] max-w-full"
             style={{ objectPosition: "center" }}
           />
         </div>
@@ -88,7 +88,7 @@ const ServicesSec = () => {
           </p>
         </div>
       </div>
-      <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-2  md:p-8 gap-8 shadow-md">
+      <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px] md:p-8 gap-8 shadow-md">
         <div className="flex-1  px-2 md:pl-0 md:pr-0  ">
           <h3 className="text-2xl md:text-3xl font-semibold text-[#243520] mb-5 ">
             4.Chirurgie orale et pathologie  
@@ -106,25 +106,25 @@ const ServicesSec = () => {
             chirurgical.
           </p>
         </div>
-        <div className="flex-1 flex justify-start items-center min-w-[320px]">
+        <div className="flex-1 flex justify-center items-center min-w-full md:min-w-[320px]">
           <Image
             src="/services/services4.png"
             alt="Préservation des dents"
             width={600}
             height={400}
-            className="rounded-3xl object-cover w-full h-[320px] md:h-[370px] max-w-full"
+            className="rounded-3xl object-cover w-full h-[250px] md:h-[370px] max-w-full"
             style={{ objectPosition: "center" }}
           />
         </div>
       </div>
-      <div className=" rounded-xl  mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-2  md:p-8 gap-13 shadow-md">
-        <div className="flex-1 flex justify-center items-center h-full min-w-[320px]">
+      <div className=" rounded-xl  mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px]  md:p-8 gap-13 shadow-md">
+        <div className="flex-1 flex justify-center items-center min-w-full md:min-w-[320px]">
           <Image
             src="/services/services5.png"
             alt="Préservation des dents"
             width={600}
             height={400}
-            className="rounded-3xl object-cover w-full  md:h-[370px] max-w-full"
+            className="rounded-3xl object-cover w-full h-[250px] md:h-[370px] max-w-full"
             style={{ objectPosition: "center" }}
           />
         </div>
@@ -137,8 +137,8 @@ const ServicesSec = () => {
           </p>
         </div>
       </div>
-      <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-2  md:p-8 gap-8 shadow-md">
-        <div className="flex-1  px-2 md:px-8  ">
+      <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px]  md:p-8 gap-8 shadow-md">
+        <div className="flex-1   px-0 md:px-8  ">
           <h3 className="text-2xl md:text-3xl font-semibold text-[#243520] mb-5">
             6. Denisterie esthétique
           </h3>
@@ -149,13 +149,13 @@ const ServicesSec = () => {
             personnalisé pour vos objectifs et votre santé bucco-dentaire.
           </p>
         </div>
-        <div className="flex-1 flex justify-center items-center min-w-[320px]">
+        <div className="flex-1 flex justify-center items-center min-w-full md:min-w-[320px]">
           <Image
             src="/services/services6.png"
             alt="Préservation des dents"
             width={600}
             height={400}
-            className="rounded-3xl object-cover w-full h-[320px] md:h-[370px] max-w-full"
+            className="rounded-3xl object-cover w-full h-[250px] md:h-[370px] max-w-full"
             style={{ objectPosition: "center" }}
           />
         </div>

@@ -1,66 +1,76 @@
+import Image from "next/image";
 const moreImgs = [
   "/more-imgs/more1.avif",
   "/more-imgs/more2.avif",
   "/more-imgs/more3.avif",
+  // Add more images if needed
 ];
 
 const MoreImagesSection = () => (
-  <section className="w-full bg-[#9aae92] py-16">
-    <h2 className="w-[268px] mx-auto pt-[75px] [font-family:'Playfair_Display',Helvetica] font-black text-[#2b3029] text-[50px] tracking-[-0.80px] leading-[60px] text-center">
-      Et plus…
-    </h2>
-    <div
-      className="grid grid-cols-3  max-w-6xl mx-auto mt-16 px-4"
-      style={{
-        rowGap: "60px",
-      }}
-    >
-      <div
-        className="col-span-2 max-h-[350px]"
-        style={{ marginRight: "110px" }}
-      >
-        <img
-          src={moreImgs[0]}
-          alt="Gallery image 1"
-          className="rounded-4xl object-cover w-full h-full"
-        />
+  <section className="w-full p-[20px] md:py-20 bg-[#9aae92]">
+    <div className="max-w-[1000px] mx-auto">
+      <div className="w-full text-center ">
+        <h1 className="font-playfair-important  font-bold text-[#2b3029] text-[34px] md:text-[2.6rem] md:tracking-[-0.8px] leading-tight">
+          Où le confort rencontre l'art.
+        </h1>
       </div>
-      <div
-        className="col-start-3 max-h-[330px]"
-        style={{ marginTop: "20px" }}
-      >
-        <img
-          src={moreImgs[1]}
-          alt="Gallery image 2"
-          className="rounded-4xl object-cover w-full h-full"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-1 w-full gap-[50px] py-10">
+        {/* Left: Images stacked vertically */}
+        <div
+          className="w-full md:col-span-2 h-[420px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md"
+          style={{ marginRight: "100px" }}
+        >
+          <Image
+            src="/cabinet/cabinet1.png"
+            alt="Cabinet appareil"
+            width={600}
+            height={270}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
+        <div className="w-full md:col-start-3 h-[420px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
+          <Image
+            src="/cabinet/cabinet2.png"
+            alt="Salle d'attente"
+            width={600}
+            height={270}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
       </div>
-      <div className="row-span-2 row-start-2 " style={{ marginRight: "20px" }}>
-        <img
-          src={moreImgs[2]}
-          alt="Gallery image 3"
-          className="rounded-4xl object-cover w-full h-full"
-        />
-      </div>
-      <div
-        className="col-span-2 row-start-2 max-h-[350px]"
-        style={{ marginRight: "50px", marginLeft: "20px" }}
-      >
-        <img
-          src={moreImgs[0]}
-          alt="Gallery image 4"
-          className="rounded-4xl object-cover w-full h-full"
-        />
-      </div>
-      <div
-        className="col-span-2 col-start-2 row-start-3 max-h-[350px]"
-        style={{ marginRight: "70px", marginLeft: "20px" }}
-      >
-        <img
-          src={moreImgs[1]}
-          alt="Gallery image 5"
-          className="rounded-4xl object-cover w-full h-full"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-12">
+        <div className="w-full h-[630px] md:row-span-2 rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
+          <Image
+            src="/cabinet/cabinet3.png"
+            alt="Cabinet appareil"
+            width={600}
+            height={270}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
+        <div className="w-full md:col-span-2 h-[300px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
+          <Image
+            src="/cabinet/cabinet4.png"
+            alt="Cabinet appareil"
+            width={600}
+            height={270}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
+        <div className="w-full md:col-span-2 h-[300px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
+          <Image
+            src="/cabinet/cabinet4.png"
+            alt="Cabinet appareil"
+            width={600}
+            height={270}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
       </div>
     </div>
   </section>

@@ -7,9 +7,9 @@ const Contact = () => {
   return (
     <section className="w-full  bg-[#F7F7F5] flex flex-col items-center justify-center py-20 px-4">
       {/* Title */}
-      <h2 className="font-playfair-important text-[2.5rem] md:text-[3rem] text-[#243520] font-bold mb-10 text-center">
+      <h1 className="font-playfair-important  text-[34px] md:text-[50px] text-[#243520] font-bold mb-10 text-center">
         Contact
-      </h2>
+      </h1>
       <div className="flex flex-col md:flex-row w-full max-w-[1100px] gap-10 md:gap-20 items-start justify-center px-4">
         {/* Left: Contact Info */}
         <div className="flex-1 flex flex-col gap-6 min-w-[300px] max-w-[400px] mt-10 mx-auto md:mx-0">

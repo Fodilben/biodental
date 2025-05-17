@@ -43,12 +43,12 @@ export const Reviews = () => {
   // Duplicate the reviews for seamless infinite scroll
   const cards = [...reviews, ...reviews];
   return (
-    <section className="relative w-full h-[95vh] bg-[#243520] flex flex-col items-center py-16  pb-12">
-      <h2 className="text-white text-5xl md:text-6xl font-bold mb-30 text-center font-playfair-important">
+    <section className="relative w-full h-full md:h-[95vh] bg-[#243520] flex flex-col items-center py-16  px-6 md:px-0 pb-12">
+      <h2 className="text-white text-[34px] md:text-[50px] font-bold mb-30 text-center font-playfair-important">
         Votre confiance, selon leurs mots...
       </h2>
       <div
-        className="relative w-full max-w-[1150px] overflow-hidden "
+        className="relative w-full max-w-[1150px] overflow-hidden pb-8 md:pb-0"
         style={{
           maskImage:
             'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 3.5%, rgb(0, 0, 0) 96.5%, rgba(0, 0, 0, 0) 100%)',

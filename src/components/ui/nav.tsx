@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
+import { IoMenu } from "react-icons/io5";
+
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -68,12 +70,12 @@ export const Nav = () => {
                   <FiPhone className="text-[#F7F7F5]" size={23} />
                 </button>
                 <button
-                  className="flex md:hidden items-center justify-center w-11 h-11 rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none"
+                  className="flex md:hidden items-center justify-center w-[35px] h-[35px] rounded-full  hover:bg-[#222] transition-colors duration-150 focus:outline-none"
                   onClick={() => setMobileMenuOpen(true)}
                   aria-label="Ouvrir le menu"
                   type="button"
                 >
-                  <FiMenu className="text-[#F7F7F5]" size={28} />
+                  <FiMenu className="text-[#000]" size={28} />
                 </button>
                 {/* Overlay for click-away */}
                 {showPhone && (

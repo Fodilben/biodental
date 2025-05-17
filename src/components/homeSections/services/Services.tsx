@@ -16,6 +16,7 @@ export const Services = ()=>  {
         "and protect your natural",
         "teeth.",
       ],
+      desc:"Des traitements doux pour réparer et protéger vos dents naturelles.",
       image: "..//image-3.png",
       borderRadius: "rounded-[80px_8px_8px_8px]",
       imageRadius: "rounded-[80px_5px_0px_0px]",
@@ -83,18 +84,18 @@ export const Services = ()=>  {
   ];
 
   return (
-    <section className="w-full py-16 bg-[#9aae92]">
-      <div className="container mx-auto px-4">
+    <section className="w-full py-16 bg-[#9aae92] ">
+      <div className="container mx-auto">
         {/* Heading */}
         <div className="flex flex-col items-center mb-16 relative">
-          <div className="flex flex-col items-center mb-16 relative w-fit ">
-            <h1 className="text-[50px] tracking-[-0.80px] leading-[60px] font-black text-[#2b3029] font-playfair-important text-center relative">
+          <div className="flex flex-col items-center mb-0  md:mb-16 relative w-fit ">
+            <h1 className="text-[34px] md:text-[50px] tracking-[-0.80px] leading-[40px] font-black text-[#2b3029] font-playfair-important text-center relative px-6">
               Que faisons-nous pour prendre soin
               <br />
               de votre sourire ;)
             </h1>
             <div
-              className="w-[57px] h-[57px] absolute -right-12 -top-0 rotate-y-180 bg-cover"
+              className="w-[30px] md:w-[57px] h-[30px] md:h-[57px] absolute right-[33px] md:right-12 -top-0 rotate-y-180 bg-cover"
               style={{ backgroundImage: "url(..//image-6.png)" }}
             />
           </div>
@@ -105,39 +106,42 @@ export const Services = ()=>  {
           {topRowServices.map((service) => (
             <Card
               key={service.id}
-              className={`w-[293px] h-[450px] border-4 border-solid border-[#f7f7f5] ${service.borderRadius} overflow-hidden`}
+              className={`w-[350px] md:w-[293px] h-[450px] border-4 border-solid border-[#f7f7f5] ${service.borderRadius} overflow-hidden`}
             >
               <div
-                className={`w-[269px] h-[250px] mx-2 mt-2 bg-cover bg-center ${service.imageRadius}`}
+                className={`w-[350px] md:w-[269px] h-[250px] mx-2 mt-2 bg-cover bg-center ${service.imageRadius}`}
                 style={{ backgroundImage: `url(${service.image})` }}
               />
               <CardContent className="p-3">
-                <div className="mb-3">
-                  {service.title.includes("\n") ? (
-                    service.title.split("\n").map((line, index) => (
-                      <h3
+                
+                  <div className="mb-3">
+                    {service.title.includes("\n") ? (
+                      service.title.split("\n").map((line, index) => (
+                        <h3
+                          key={index}
+                          className="text-[26px] tracking-[-0.80px] font-bold leading-[33.6px]  text-[#2b3029]"
+                        >
+                          {line}
+                        </h3>
+                      ))
+                    ) : (
+                      <h3 className="text-[26px] tracking-[-0.80px] leading-[33.6px] font-bold text-[#2b3029] font-[var(--font-playfair)]">
+                        {service.title}
+                      </h3>
+                    )}
+                  </div>
+                  <div className="mb-3 ">
+                    {service.description.map((line, index) => (
+                      <p
                         key={index}
-                        className="text-[26px] tracking-[-0.80px] font-bold leading-[33.6px]  text-[#2b3029]"
+                        className="text-[17.3px] tracking-[0.18px] leading-[25.2px] font-normal text-[#f7f7f5] whitespace-nowrap"
                       >
                         {line}
-                      </h3>
-                    ))
-                  ) : (
-                    <h3 className="text-[26px] tracking-[-0.80px] leading-[33.6px] font-bold text-[#2b3029] font-[var(--font-playfair)]">
-                      {service.title}
-                    </h3>
-                  )}
-                </div>
-                <div className="mb-3">
-                  {service.description.map((line, index) => (
-                    <p
-                      key={index}
-                      className="text-[17.3px] tracking-[0.18px] leading-[25.2px] font-normal text-[#f7f7f5] whitespace-nowrap"
-                    >
-                      {line}
-                    </p>
-                  ))}
-                </div>
+                      </p>
+                    ))}
+                  </div>
+                
+                
                 <div className="flex justify-end px-2">
                   <div className="flex  justify-center items-center text-[#243520]  gap-1 font-playfair-important">
                     <span className="text-[19px] tracking-[0.19px] leading-[26.6px] font-normal ">
@@ -156,10 +160,10 @@ export const Services = ()=>  {
           {bottomRowServices.map((service) => (
             <Card
               key={service.id}
-              className={`w-[293px] h-[450px] border-4 border-solid border-[#f7f7f5] ${service.borderRadius} overflow-hidden`}
+              className={`w-[350px] md:w-[293px] h-[450px] border-4 border-solid border-[#f7f7f5] ${service.borderRadius} overflow-hidden`}
             >
               <div
-                className={`w-[269px] h-[250px] mx-2 mt-2 bg-cover bg-center ${service.imageRadius}`}
+                className={`w-[350px] md:w-[269px] h-[250px] mx-2 mt-2 bg-cover bg-center ${service.imageRadius}`}
                 style={{ backgroundImage: `url(${service.image})` }}
               />
               <CardContent className="p-3 ">
