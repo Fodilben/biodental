@@ -8,6 +8,7 @@ import  {Features}  from "../components/homeSections/features/Features";
 import { Hero } from "../components/homeSections/hero/hero";
 import { Reviews } from "@/components/homeSections/reviews/page";
 import dynamic from "next/dynamic";
+import GallerySectionClient from "../components/GallerySectionClient";
 
 const GallerySection = dynamic(() => import("../components/testimonialSections/GallerySection"));
 
@@ -23,7 +24,7 @@ export default function Page() {
           </div>
           {/* Testimonials Section */}
           <About />
-          <GallerySection />
+          <GallerySectionClient />
           <Features />
           <Services />
           <Reviews />
