@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className=" hidden md:flex  flex-col items-center  w-[900px] mx-auto">
         <div className=" flex flex-col gap-1 font-black font-playfair-important text-[#2b3029] text-center  indent-2 space-y-0.5  ">
           <h1 className="h-[80px] mr-4 relative  text-[66px] ">
-            <span className="animate-appear">Restaurer votre </span>
+            <span className="slide-up-fade-in inline-block" style={{ animationDelay: '0ms' }}>Restaurer votre</span>
             <span className="inline-block align-middle ">
               <img
                 src="/hero1.avif"
@@ -16,7 +16,7 @@ export const Hero = () => {
                 className="inline h-[70px] w-[130px] rounded-full object-cover align-baseline"
               />
             </span>
-            <span className="text-[#9aae92] italic font-bold">Sourire</span>
+            <span className="text-[#9aae92] italic font-bold slide-up-fade-in inline-block" style={{ animationDelay: '150ms' }}>Sourire</span>
             <span className=" absolute top-3 -right-11">
               <img
                 src="/nedjm.avif"
@@ -33,7 +33,7 @@ export const Hero = () => {
                 className="inline h-[38px] w-[48px] align-top"
               />
             </span>
-            <span>Naturel: soins doux,</span>
+            <span className="slide-up-fade-in inline-block" style={{ animationDelay: '300ms' }}>Naturel: soins doux,</span>
             <span className="inline-block align-middle mx-1">
               <img
                 src="/hero2.avif"
@@ -50,7 +50,7 @@ export const Hero = () => {
                 className="inline h-[70px] w-[150px] rounded-full object-cover align-middle"
               />
             </span>
-            <span>Priorité au Patient.</span>
+            <span className="animate-hero-fade-up inline-block" style={{ animationDelay: '450ms' }}>Priorité au Patient.</span>
           </h1>
         </div>
         <div className="flex justify-center  pt-8 w-full">

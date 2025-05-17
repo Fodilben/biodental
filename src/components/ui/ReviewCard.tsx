@@ -5,7 +5,7 @@ interface ReviewCardProps {
   name: string;
   rating: number;
   text: string;
-  platform: "google" | "instagram";
+  platform?: "google" | "instagram";
 }
 
 export const ReviewCard = ({

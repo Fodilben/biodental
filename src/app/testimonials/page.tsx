@@ -21,7 +21,7 @@ export default function TestimonialsPage() {
       <TestimonialHeroSection />
       <Reviews />
       <GallerySection />
-      <MoreImagesSection />
+    <MoreImagesSection />
       <CTA />
       <Footer />
     </div>
