@@ -7,6 +7,9 @@ import { CTA } from "../components/homeSections/CTA/CTA";
 import  {Features}  from "../components/homeSections/features/Features";
 import { Hero } from "../components/homeSections/hero/hero";
 import { Reviews } from "@/components/homeSections/reviews/page";
+import dynamic from "next/dynamic";
+
+const GallerySection = dynamic(() => import("../components/testimonialSections/GallerySection"), { ssr: false });
 
 export default function Page() {
   return (
@@ -20,8 +23,9 @@ export default function Page() {
           </div>
           {/* Testimonials Section */}
           <About />
+          <GallerySection />
           <Features />
-      <Services />
+          <Services />
           <Reviews />
           <FAQ />
         </div>

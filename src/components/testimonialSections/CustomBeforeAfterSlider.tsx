@@ -86,12 +86,12 @@ function useInit(
   onImageLoad: OnImageLoadCallback
 ) {
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
     updateContainerWidth();
     // With ssr the first image may already be loaded. The second image only appears on the client.
     if (firstImageRef.current && firstImageRef.current.complete) {
       onImageLoad(0);
     }
-
     document.addEventListener("click", onMouseUpHandler);
     return () => {
       document.removeEventListener("click", onMouseUpHandler);
@@ -101,14 +101,14 @@ function useInit(
 
 function useResizeFeel(callback: () => void, withResizeFeel?: boolean) {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     if (withResizeFeel) {
       window.addEventListener("resize", callback);
     }
-
     return () => {
       window.removeEventListener("resize", callback);
     };
-  }, []);
+  }, [withResizeFeel, callback]);
 }
 
 function normalizeNewPosition(newPosition: number, imagesWidth: number) {
@@ -168,30 +168,36 @@ export default function BeforeAfterSlider({
   /**
    * Observer start
    */
-  const observerVisiblePercent = 0.95;
-  const observerOptions = {
-    threshold: [0.0, observerVisiblePercent],
-  };
-  const observerCallback = function (entries: IntersectionObserverEntry[]) {
-    if (!observer || !onVisible) return;
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio > observerVisiblePercent) {
-        observer.disconnect();
-        onVisible();
-      }
-    });
-  };
-  const [observer] = useState(
-    onVisible && isIntersectionObserverSupport()
-      ? new IntersectionObserver(observerCallback, observerOptions)
-      : null
-  );
+  const [observer, setObserver] = useState<IntersectionObserver | null>(null);
+
   useEffect(() => {
-    if (observer) {
-      if (!isReady) return;
+    if (!onVisible || typeof window === 'undefined') return;
+    if (!isIntersectionObserverSupport()) return;
+    const observerVisiblePercent = 0.95;
+    const observerOptions = {
+      threshold: [0.0, observerVisiblePercent],
+    };
+    const observerCallback = function (entries: IntersectionObserverEntry[]) {
+      if (!observer || !onVisible) return;
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > observerVisiblePercent) {
+          observer.disconnect();
+          onVisible();
+        }
+      });
+    };
+    const obs = new window.IntersectionObserver(observerCallback, observerOptions);
+    setObserver(obs);
+    return () => {
+      obs.disconnect();
+    };
+  }, [onVisible]);
+
+  useEffect(() => {
+    if (observer && isReady && refContainer.current) {
       observer.observe(refContainer.current as HTMLDivElement);
     }
-  }, [isReady]);
+  }, [observer, isReady]);
   /**
    * Observer end
    */
@@ -243,11 +249,11 @@ export default function BeforeAfterSlider({
 
   const updateContainerPosition = () => {
     if (!refContainer.current) return;
+    if (typeof window === 'undefined') return;
     const containerCoords = refContainer.current.getBoundingClientRect();
-
     setContainerPosition({
-      top: containerCoords.top + pageYOffset,
-      left: containerCoords.left + pageXOffset,
+      top: containerCoords.top + (typeof window !== 'undefined' ? window.pageYOffset : 0),
+      left: containerCoords.left + (typeof window !== 'undefined' ? window.pageXOffset : 0),
     });
   };
 
