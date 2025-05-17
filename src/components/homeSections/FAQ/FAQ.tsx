@@ -13,16 +13,19 @@ export const FAQ = () => {
   const faqItems = [
     {
       question: "What is the cost of a dental bridge in Algeria?",
-      answer: "",
+      answer:
+        "The cost of a dental bridge in Algeria typically ranges from 20,000 to 50,000 DZD per tooth, depending on materials used (porcelain, zirconia, or metal) and complexity of the case. At BioDental, we offer flexible payment options to make quality dental bridges accessible.",
     },
     {
       question:
         "How often should I see my dentist during orthodontic treatment?",
-      answer: "",
+      answer:
+        "During orthodontic treatment, we recommend visits every 4-6 weeks for adjustments and progress monitoring. Regular appointments ensure your treatment stays on track and allows us to address any issues promptly. Each appointment typically takes 20-30 minutes.",
     },
     {
       question: "Which dental braces are right for me?",
-      answer: "",
+      answer:
+        "The right braces depend on your specific needs, lifestyle, and budget. We offer traditional metal braces, ceramic (tooth-colored) braces, and clear aligners. During your consultation, we'll assess your dental structure, treatment goals, and preferences to recommend the most suitable option for optimal results.",
     },
   ];
 
@@ -54,7 +57,7 @@ export const FAQ = () => {
                       {item.question}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pl-[54px] transition-all duration-500 ease-in-out data-[state=open]:opacity-100 data-[state=open]:translate-y-0 data-[state=closed]:opacity-0 data-[state=closed]:-translate-y-2">
+                  <AccordionContent className="pl-[54px] transition-all duration-500 ease-in-out data-[state=open]:opacity-100 data-[state=open]:translate-y-0 data-[state=closed]:opacity-0 data-[state=closed]:-translate-y-2 text-white text-[18px] leading-[26px] mt-2 font-normal">
                     {item.answer || "Content not provided"}
                   </AccordionContent>
                 </AccordionItem>
