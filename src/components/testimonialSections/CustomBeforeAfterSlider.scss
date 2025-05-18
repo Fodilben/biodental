@@ -2,7 +2,8 @@
   width: 100%;
   position: relative;
 }
-.before-after-slider__first-photo-container, .before-after-slider__second-photo-container {
+.before-after-slider__first-photo-container,
+.before-after-slider__second-photo-container {
   width: 100%;
   overflow: hidden;
 }
@@ -13,6 +14,8 @@
 .before-after-slider img {
   max-width: none;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
@@ -64,4 +67,4 @@
 .custom-delimiter-icon .before-after-slider__delimiter-icon::after {
   right: 18px;
   transform: translateY(-50%) rotate(135deg);
-} 
+}
