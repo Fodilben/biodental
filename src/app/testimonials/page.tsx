@@ -17,7 +17,6 @@ export default function TestimonialsPage() {
   return (
     <div className="relative w-full bg-[#F7F7F5]">
       <Nav />
-      {/* <PhonePopup open={showPhone} /> */}
       <TestimonialHeroSection />
       <Reviews />
       <GallerySection />

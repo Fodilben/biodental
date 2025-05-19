@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import Health from "@/components/ui/animatedIcons/Health";
 import { Card, CardContent } from "../../ui/card";
 import Flower2 from "@/components/ui/animatedIcons/Flower2";
 import Dentist from "@/components/ui/animatedIcons/dentist";
 import Yoga from "@/components/ui/animatedIcons/yoga";
 
-export const Features = ({issevice}: {issevice?: boolean}) => {
+export const Features = ({ issevice }: { issevice?: boolean }) => {
   // Define card data for mapping
   const featureCards = [
     {
@@ -36,7 +36,7 @@ export const Features = ({issevice}: {issevice?: boolean}) => {
       description: [
         "Nous utilisons une technologie dentaire",
         "de pointe pour fournir des traitements",
-        "précis et efficaces."
+        "précis et efficaces.",
       ],
       borderColor: "border-[#9aae92]",
       lottieIcon: <Dentist />,
@@ -47,7 +47,7 @@ export const Features = ({issevice}: {issevice?: boolean}) => {
       description: [
         "votre bien-être prime sur les intérêts",
         "commerciaux, garantissant des",
-        "traitements adaptés à vos besoins"
+        "traitements adaptés à vos besoins",
       ],
       borderColor: "border-[#9aae92]",
       lottieIcon: <Yoga />,
@@ -55,8 +55,9 @@ export const Features = ({issevice}: {issevice?: boolean}) => {
   ];
 
   return (
-    <section className={`w-full py-20 bg-[#f7f7f5] px-[30px] md:px-[30px] lg:px-0 ${issevice ? "pt-32" : ""}`}>
-    
+    <section
+      className={`w-full py-20 bg-[#f7f7f5] px-[30px] md:px-[30px] lg:px-0 ${issevice ? "pt-32" : ""}`}
+    >
       <div className="container mx-auto max-w-6xl ">
         <h2 className="text-center font-playfair-important  text-[34px] md:text-[50px] font-bold text-[#2b3029] tracking-[-0.80px] leading-[60px] mb-12 font-serif">
           Pourquoi choisir Biodental?

@@ -3,7 +3,6 @@ import React from "react";
 import  BeforeAfterSlider  from "./CustomBeforeAfterSlider";
 import "react-before-after-slider-component/dist/build.css";
 import { motion } from "framer-motion";
-
 const beforeAfterPairs = Array(9).fill({
   before: "/before-after/before1.avif",
   after: "/before-after/after1.avif",
@@ -36,10 +35,10 @@ const GallerySection = () => (
       </h2>
     </motion.div>
     <div
-      className="mx-auto grid gap-4 md:gap-x-25 md:gap-y-13"
+      className="mx-auto grid gap-8"
       style={{
-        maxWidth: 1050,
-        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        maxWidth: 1000,
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
       }}
     >
       {beforeAfterPairs.map((pair, idx) => (
@@ -47,7 +46,7 @@ const GallerySection = () => (
           <BeforeAfterSlider
             firstImage={{ imageUrl: pair.before, alt: "Avant" }}
             secondImage={{ imageUrl: pair.after, alt: "Après" }}
-            className="rounded-xl overflow-hidden  custom-delimiter-icon"
+            className="rounded-xl overflow-hidden w-full h-full custom-delimiter-icon"
             delimiterIconStyles={{
               width: 64,
               height: 64,

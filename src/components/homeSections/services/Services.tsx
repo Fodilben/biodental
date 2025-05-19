@@ -1,6 +1,7 @@
 import * as React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { Card, CardContent } from "../../ui/card";
+import { motion } from "framer-motion";
 
 import { RiArrowRightSFill as ArrowIcon } from "react-icons/ri";
 
@@ -10,13 +11,13 @@ export const Services = ()=>  {
   const topRowServices = [
     {
       id: 1,
-      title: "Tooth Preservation",
+      title: "Préservation dentaire",
       description: [
-        "Gentle treatments to repair",
-        "and protect your natural",
-        "teeth.",
+        "Des traitements doux pour",
+        "réparer et protéger vos ",
+        "dents naturelles.",
       ],
-      desc:"Des traitements doux pour réparer et protéger vos dents naturelles.",
+      desc: "Des traitements doux pour réparer et protéger vos dents naturelles.",
       image: "..//image-3.png",
       borderRadius: "rounded-[80px_8px_8px_8px]",
       imageRadius: "rounded-[80px_5px_0px_0px]",
@@ -26,8 +27,8 @@ export const Services = ()=>  {
       title: "Dental Implants",
       description: [
         "Permanent solutions to",
-        "replace missing teeth and",
-        "restore your smile.",
+        "remplacer les dents ",
+        "manquantes.",
       ],
       image: "..//image-4.png",
       borderRadius: "rounded-lg",
@@ -35,8 +36,8 @@ export const Services = ()=>  {
     },
     {
       id: 3,
-      title: "Fixed Dental\nProsthetics",
-      description: ["Custom-made crowns and", "bridges for durable, natural"],
+      title: "Prothèses dentaires",
+      description: ["Couronnes et bridges ", "personnalisés : durabilité et ", "esthétique naturelle."],
       image: "..//image-5.png",
       borderRadius: "rounded-[8px_80px_8px_8px]",
       imageRadius: "rounded-[20px_80px_20px_20px]",
@@ -47,11 +48,11 @@ export const Services = ()=>  {
   const bottomRowServices = [
     {
       id: 1,
-      title: "Oral Surgery &",
+      title: "Chirurgie orale et",
       description: [
-        "Expert care for complex",
-        "dental issues and surgical",
-        "needs",
+        "Soins spécialisés pour ",
+        "problèmes dentaires ",
+        "complexes.",
       ],
       image: "..//image.png",
       borderRadius: "rounded-[8px_8px_8px_80px]",
@@ -59,11 +60,11 @@ export const Services = ()=>  {
     },
     {
       id: 2,
-      title: "Orthodontics (ODF)",
+      title: "Orthodontie (ODF)",
       description: [
-        "Aligning teeth and jaws for a",
-        "healthier, more confident",
-        "smile",
+        "Aligner les dents et les",
+        "mâchoires pour un sourire ",
+        "plus sain et plus confiant",
       ],
       image: "..//image-1.png",
       borderRadius: "rounded-lg",
@@ -71,11 +72,11 @@ export const Services = ()=>  {
     },
     {
       id: 3,
-      title: "Cosmetic Dentistry",
+      title: "Dentisterie esthétique",
       description: [
-        "Enhancing the appearance",
-        "of your teeth for a radiant",
-        "smile",
+        "Améliorer l'apparence de vos",
+        "dents pour un sourire ",
+        "rayonnant",
       ],
       image: "..//image-2.png",
       borderRadius: "rounded-[8px_8px_80px_8px]",
@@ -89,13 +90,15 @@ export const Services = ()=>  {
         {/* Heading */}
         <div className="flex flex-col items-center mb-16 relative">
           <div className="flex flex-col items-center mb-0  md:mb-16 relative w-fit ">
-            <h1 className="text-[34px] md:text-[50px] tracking-[-0.80px] leading-[40px] font-black text-[#2b3029] font-playfair-important text-center relative px-6">
+            <div 
+              className="text-[34px] md:text-[50px] tracking-[-0.80px] leading-[40px] font-black text-[#2b3029] font-playfair-important text-center relative px-6"
+            >
               Que faisons-nous pour prendre soin
               <br />
-              de votre sourire ;)
-            </h1>
+              de votre sourire ;
+            </div>
             <div
-              className="w-[30px] md:w-[57px] h-[30px] md:h-[57px] absolute right-[33px] md:right-12 -top-0 rotate-y-180 bg-cover"
+              className="w-[30px] md:w-[57px] h-[30px] md:h-[57px] absolute right-[33px] md:right-[-40px] -top-0 md:top-[-10px] rotate-y-180 bg-cover"
               style={{ backgroundImage: "url(..//image-6.png)" }}
             />
           </div>

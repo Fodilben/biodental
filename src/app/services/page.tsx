@@ -9,11 +9,7 @@ export default function Services() {
   return (
     <div className="relative w-full bg-[#9aae92] ">
       <Nav />
-      
-
       <Features issevice={true} />
-  
-      
       <ServicesSec />
       <CTA />
       <Footer />

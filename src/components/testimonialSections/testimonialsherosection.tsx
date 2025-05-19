@@ -1,10 +1,33 @@
 'use client';
 import * as React from "react";
-import { Button } from "../ui/button";
+import  { useRef, useState } from "react";
+import { Button } from "../../components/ui/button";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { FiPhone, FiMenu, FiX } from "react-icons/fi";
+const PHONE_NUMBERS = ["07 87 90 78 32", "06 59 77 27 37"];
 
+export function PhonePopup({ open }: { open: boolean }) {
+  return (
+    <div
+      className={`fixed w-[192px] border border-white top-[70px] right-[100px]  z-[100] flex flex-col rounded-xl shadow-lg bg-[#9aad92]/90 min-w-[192px] h-[100px] `}
+      style={{ boxShadow: "0 4px 24px 0 #0002" }}
+    >
+      {PHONE_NUMBERS.map((num, idx) => (
+        <a
+          key={num}
+          href={`tel:${num.replace(/\s/g, "")}`}
+          className={`flex border border-white items-center gap-2 px-6 h-1/2 text-[17px] text-[#000] font-medium ${idx === 0 ? "rounded-t-xl" : ""} ${idx === PHONE_NUMBERS.length - 1 ? "rounded-b-xl" : "border-t border-[#e0e7db]"}`}
+        >
+          <FiPhone className="text-[#fff]" size={18} />
+          {num}
+        </a>
+      ))}
+    </div>
+  );
+}
 const initialImages = [
   {
     id: 1,
@@ -32,7 +55,11 @@ const initialImages = [
   },
 ];
 
+
 export default function TestimonialHeroSection() {
+   const [showPopup, setShowPopup] = useState(false);
+   const btnRef = useRef<HTMLButtonElement>(null);
+   const popupRef = useRef<HTMLDivElement>(null);
   return (
     <section className="w-full bg-[#9aae92] flex justify-center items-center pt-[140px] pb-[60px] lg:py-[40px] h-full md:h-[100vh] overflow-hidden">
       <div className="max-w-6xl  md:pt-10 w-full mx-auto flex flex-col md:flex-row gap-8 md:gap-0 px-4 md:px-12 lg:px-4 items-center justify-center ">
@@ -51,9 +78,28 @@ export default function TestimonialHeroSection() {
               la confiance que nos soins dentaires personnalisés ont apportés à
               des personnes de tous âges.
             </p>
-            <Button className="bg-[#263820]  text-white rounded-lg px-4 py-2 text-[16px] text-base font-semibold w-fit" style={{ boxShadow: '0px 4px 16px 0px rgba(44,50,41,0.18)' }}>
-              Prendre rendez-vous
-            </Button>
+            <div
+              className="relative flex flex-col items-center md:items-start p-1"
+              onMouseLeave={() => setShowPopup(false)}
+            >
+              <Button
+                ref={btnRef}
+                className="mt-4 relative bg-[#243520]  w-[192px] hover:bg-[#222] text-white rounded-lg py-2 shadow-[0px_0.71px_0.71px_-0.62px_#00000026,0px_1.81px_1.81px_-1.25px_#00000024,0px_3.62px_3.62px_-1.88px_#00000024,0px_6.87px_6.87px_-2.5px_#00000021,0px_13.65px_13.65px_-3.12px_#0000001a,0px_30px_30px_-3.75px_#0000000d] transition-colors duration-[400ms]"
+                onClick={() => setShowPopup((v) => !v)}
+              >
+                <span className="text-[16px] leading-[16.8px]  font-normal">
+                  Prendre rendez-vous
+                </span>
+                {showPopup && (
+                  <div
+                    ref={popupRef}
+                    className="absolute z-[200] top-[-180px] right-[-100px] -translate-x-1/2"
+                  >
+                    <PhonePopup open={showPopup} />
+                  </div>
+                )}
+              </Button>
+            </div>
           </div>
         </div>
         {/* Right: Static Images */}
@@ -65,11 +111,11 @@ export default function TestimonialHeroSection() {
             width={200}
             height={236}
             className="absolute w-[205px] md:w-[190px] h-[160px] md:h-[236px] rounded-[32px] z-30 left-1/2 top-6 -translate-x-1/2 rotate-[-13deg] shadow-2xl object-cover cursor-grab"
-            style={{ boxShadow: '0 8px 32px 0 rgba(60, 80, 60, 0.18)' }}
+            style={{ boxShadow: "0 8px 32px 0 rgba(60, 80, 60, 0.18)" }}
             drag
             dragElastic={0.2}
             dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-            whileTap={{ scale: 0.95, cursor: 'grabbing' }}
+            whileTap={{ scale: 0.95, cursor: "grabbing" }}
             dragSnapToOrigin
           />
           {/* Bottom left image (teeth) */}
@@ -79,11 +125,11 @@ export default function TestimonialHeroSection() {
             width={300}
             height={140}
             className="absolute w-[230px] md:w-[295px] h-[100px] md:h-[140px] z-20 left-[-10px] md:left-[40px] bottom-[48px] md:bottom-4 rotate-[304deg] md:rotate-[-30deg] rounded-t-[50px] rounded-br-[50px] shadow-xl object-cover cursor-grab"
-            style={{ boxShadow: '0 8px 32px 0 rgba(60, 80, 60, 0.18)' }}
+            style={{ boxShadow: "0 8px 32px 0 rgba(60, 80, 60, 0.18)" }}
             drag
             dragElastic={0.2}
             dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-            whileTap={{ scale: 0.95, cursor: 'grabbing' }}
+            whileTap={{ scale: 0.95, cursor: "grabbing" }}
             dragSnapToOrigin
           />
           {/* Bottom right image (braces) */}
@@ -93,11 +139,11 @@ export default function TestimonialHeroSection() {
             width={260}
             height={140}
             className="absolute w-[200px] md:w-[260px]  h-[90px] md:h-[140px] z-10 right-0 bottom-[49px] md:bottom-7 rotate-[25deg] rounded-tr-[50px] rounded-bl-[50px] shadow-xl object-cover cursor-grab"
-            style={{ boxShadow: '0 8px 32px 0 rgba(60, 80, 60, 0.18)' }}
+            style={{ boxShadow: "0 8px 32px 0 rgba(60, 80, 60, 0.18)" }}
             drag
             dragElastic={0.2}
             dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-            whileTap={{ scale: 0.95, cursor: 'grabbing' }}
+            whileTap={{ scale: 0.95, cursor: "grabbing" }}
             dragSnapToOrigin
           />
         </div>
