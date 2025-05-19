@@ -7,11 +7,11 @@ import {
   TestimonialHeroSection,
   TestimonialsSection,
   GallerySection,
-  MoreImagesSection
+  MoreImagesSection,
 } from "../../components/testimonialSections";
 import { CTA } from "../../components/homeSections/CTA/CTA";
-import { PhonePopup } from './../../components/ui/nav';
-let showPhone =false
+import { PhonePopup } from "./../../components/ui/nav";
+let showPhone = false;
 
 export default function TestimonialsPage() {
   return (
@@ -20,9 +20,9 @@ export default function TestimonialsPage() {
       <TestimonialHeroSection />
       <Reviews />
       <GallerySection />
-    <MoreImagesSection />
+      <MoreImagesSection />
       <CTA />
       <Footer />
     </div>
   );
-} 
+}

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import * as React from "react";
 // import "../../styles/heroAnimation.css";
 import { Button } from "../../ui/button";
@@ -8,12 +8,10 @@ import "animate.css";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 const PHONE_NUMBERS = ["07 87 90 78 32", "06 59 77 27 37"];
 
-
-
-  export const Hero = () => {
-    const [showPopup, setShowPopup] = useState(false);
-    const btnRef = useRef<HTMLButtonElement>(null);
-    const popupRef = useRef<HTMLDivElement>(null);
+export const Hero = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
   return (
     <section className="relative w-full min-h-[700px] flex flex-col items-center justify-center bg-[#f7f7f5] pt-[50px]  md:pt-24 pb-12">
       {/* website version */}

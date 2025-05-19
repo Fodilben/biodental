@@ -3,7 +3,6 @@ const CabinetImages = () => {
   return (
     <div className="w-full py-0 md:py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-1 w-full gap-[50px] py-10">
-        {/* Left: Images stacked vertically */}
         <div
           className="w-full md:col-span-2 h-[420px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md"
           style={{ marginRight: "100px" }}
@@ -137,5 +136,5 @@ const CabinetImages = () => {
       </div>
     </div>
   );
-}
-export default CabinetImages
+};
+export default CabinetImages;

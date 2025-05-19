@@ -1,9 +1,8 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
-
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -12,13 +11,9 @@ const navItems = [
   { label: "Témoignages", path: "/testimonials" },
 ];
 
-const PHONE_NUMBERS = [
-  "07 87 90 78 32",
-  "06 59 77 27 37",
-];
+const PHONE_NUMBERS = ["07 87 90 78 32", "06 59 77 27 37"];
 
-export  function PhonePopup({ open }: { open: boolean  } ) {
-  
+export function PhonePopup({ open }: { open: boolean }) {
   return (
     <div
       className={`fixed w-[192px] border border-white top-[70px] right-[20%]  z-[100] flex flex-col rounded-xl shadow-lg bg-[#9aad92]/90 min-w-[192px] h-[100px] `}
@@ -129,8 +124,7 @@ export const Nav = () => {
           </div> */}
         </div>
       )}
-      {showPhone && <PhonePopup open={showPhone}  />}
+      {showPhone && <PhonePopup open={showPhone} />}
     </>
   );
 };
-
