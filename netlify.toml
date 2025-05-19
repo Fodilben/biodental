@@ -5,6 +5,8 @@
 [build.environment]
   NEXT_PUBLIC_SITE_URL = "https://biodental.netlify.app"
   NODE_VERSION = "20"
+  # RESEND_API_KEY must be added in the Netlify UI
+  # You can add it at Settings > Build & deploy > Environment > Environment variables
 
 # For Next.js projects, we need this plugin
 [[plugins]]

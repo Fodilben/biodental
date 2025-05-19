@@ -44,9 +44,16 @@ This project is configured for easy deployment on Netlify. Follow these steps to
 
 ### Environment Variables
 
-Make sure to set the following environment variables in your Netlify site settings if needed:
+Make sure to set the following environment variables in your Netlify site settings (Settings > Build & deploy > Environment > Environment variables):
 
 - `NEXT_PUBLIC_SITE_URL`: Your production URL
+- `RESEND_API_KEY`: Your Resend API key for email functionality
+
+If you don't have a Resend account yet, you can:
+
+1. Sign up at [resend.com](https://resend.com)
+2. Create an API key in your dashboard
+3. Add it to your Netlify environment variables
 
 ## Development
 
