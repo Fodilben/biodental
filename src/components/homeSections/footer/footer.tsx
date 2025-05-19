@@ -42,7 +42,7 @@ export const Footer = () => {
 
   return (
     <>
-      <footer className="w-full  bg-white border border-[#83967b] rounded-[8px] px-4 md:px-3   py-9  mx-auto">
+      <footer className="w-full overflow-hidden bg-white border border-[#83967b] rounded-[8px] px-4 md:px-3   py-9  mx-auto">
         <div className="grid  xl:grid-cols-3  md:place-items-center lg:place-items-center xl:place-items-start    grid-rows-1 sm:grid-cols-1  gap-4">
           {/* Main CTA Button */}
           <div className="flex flex-col items-center justify-center md:hidden xl:flex  order-last md:order-first">
