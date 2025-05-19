@@ -45,17 +45,18 @@ const customStyles = `
   }
   
   .image-container {
-    aspect-ratio: 3/2;
+    aspect-ratio: 4/3;
     height: auto !important;
-    max-height: 210px;
+    max-height: 180px;
   }
 `;
 
 const GallerySection = () => (
   <section
-    className="w-full min-h-screen py-12 px-[50px] md:px-0"
+    className="w-full py-12 px-[50px] md:px-0"
     style={{ background: "#9AAF94" }}
   >
+    <style dangerouslySetInnerHTML={{ __html: customStyles }} />
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -70,16 +71,17 @@ const GallerySection = () => (
       </h2>
     </motion.div>
     <div
-      className="mx-auto grid gap-4 md:gap-x-25 md:gap-y-13"
+      className="mx-auto grid gap-4 md:gap-x-6 md:gap-y-6"
       style={{
         maxWidth: 1200,
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
       }}
     >
       {beforeAfterPairs.map((pair, idx) => (
         <div
           key={idx}
           className="w-full image-container rounded-xl overflow-hidden"
+          style={{ height: "180px" }}
         >
           <BeforeAfterSlider
             firstImage={{ imageUrl: pair.before, alt: "Avant" }}
