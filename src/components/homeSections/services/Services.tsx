@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 
 import { RiArrowRightSFill as ArrowIcon } from "react-icons/ri";
 
-
-export const Services = ()=>  {
+export const Services = () => {
   // Service data for the top row
   const topRowServices = [
     {
@@ -37,7 +36,11 @@ export const Services = ()=>  {
     {
       id: 3,
       title: "Prothèses dentaires",
-      description: ["Couronnes et bridges ", "personnalisés : durabilité et ", "esthétique naturelle."],
+      description: [
+        "Couronnes et bridges ",
+        "personnalisés : durabilité et ",
+        "esthétique naturelle.",
+      ],
       image: "..//image-5.png",
       borderRadius: "rounded-[8px_80px_8px_8px]",
       imageRadius: "rounded-[20px_80px_20px_20px]",
@@ -85,17 +88,15 @@ export const Services = ()=>  {
   ];
 
   return (
-    <section className="w-full py-16 bg-[#9aae92] ">
+    <section className="w-full py-16 px-[24px] bg-[#9aae92] ">
       <div className="container mx-auto">
         {/* Heading */}
         <div className="flex flex-col items-center mb-16 relative">
           <div className="flex flex-col items-center mb-0  md:mb-16 relative w-fit ">
-            <div 
-              className="text-[34px] md:text-[50px] tracking-[-0.80px] leading-[40px] font-black text-[#2b3029] font-playfair-important text-center relative px-6"
-            >
+            <div className="text-[34px] md:text-[50px] tracking-[-0.80px] leading-[40px] font-black text-[#2b3029] font-playfair-important text-center relative px-6">
               Que faisons-nous pour prendre soin
               <br />
-              de votre sourire ;
+              de votre sourire?
             </div>
             <div
               className="w-[30px] md:w-[57px] h-[30px] md:h-[57px] absolute right-[33px] md:right-[-40px] -top-0 md:top-[-10px] rotate-y-180 bg-cover"
@@ -116,35 +117,33 @@ export const Services = ()=>  {
                 style={{ backgroundImage: `url(${service.image})` }}
               />
               <CardContent className="p-3">
-                
-                  <div className="mb-3">
-                    {service.title.includes("\n") ? (
-                      service.title.split("\n").map((line, index) => (
-                        <h3
-                          key={index}
-                          className="text-[26px] tracking-[-0.80px] font-bold leading-[33.6px]  text-[#2b3029]"
-                        >
-                          {line}
-                        </h3>
-                      ))
-                    ) : (
-                      <h3 className="text-[26px] tracking-[-0.80px] leading-[33.6px] font-bold text-[#2b3029] font-[var(--font-playfair)]">
-                        {service.title}
-                      </h3>
-                    )}
-                  </div>
-                  <div className="mb-3 ">
-                    {service.description.map((line, index) => (
-                      <p
+                <div className="mb-3">
+                  {service.title.includes("\n") ? (
+                    service.title.split("\n").map((line, index) => (
+                      <h3
                         key={index}
-                        className="text-[17.3px] tracking-[0.18px] leading-[25.2px] font-normal text-[#f7f7f5] whitespace-nowrap"
+                        className="text-[26px] tracking-[-0.80px] font-bold leading-[33.6px]  text-[#2b3029]"
                       >
                         {line}
-                      </p>
-                    ))}
-                  </div>
-                
-                
+                      </h3>
+                    ))
+                  ) : (
+                    <h3 className="text-[26px] tracking-[-0.80px] leading-[33.6px] font-bold text-[#2b3029] font-[var(--font-playfair)]">
+                      {service.title}
+                    </h3>
+                  )}
+                </div>
+                <div className="mb-3 ">
+                  {service.description.map((line, index) => (
+                    <p
+                      key={index}
+                      className="text-[17.3px] tracking-[0.18px] leading-[25.2px] font-normal text-[#f7f7f5] whitespace-nowrap"
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
+
                 <div className="flex justify-end px-2">
                   <div className="flex  justify-center items-center text-[#243520]  gap-1 font-playfair-important">
                     <span className="text-[19px] tracking-[0.19px] leading-[26.6px] font-normal ">

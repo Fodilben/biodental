@@ -4,6 +4,7 @@ import { Card, CardContent } from "../../ui/card";
 import Link from "next/link";
 import { useState } from "react";
 import { FiPhone } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 export const Footer = () => {
   // Footer navigation data
@@ -53,9 +54,9 @@ export const Footer = () => {
           {/* Footer Navigation Sections */}
           <div className="flex flex-col md:flex-row  pl-3 justify-between gap-8 sm:order-first md:order-last">
             {/* lines and contact section*/}
-            <div className="flex gap-2 justify-around">
+            <div className="flex gap-2 justify-between">
               {/* lines */}
-              <div className="flex flex-col min-w-[120px]">
+              <div className="flex flex-col min-w-[100px]">
                 <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
                   Liens
                 </h3>
@@ -95,7 +96,7 @@ export const Footer = () => {
                 </ul>
               </div>
               {/* contact */}
-              <div className="flex flex-col min-w-[180px]">
+              <div className="flex flex-col min-w-[210px]">
                 <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
                   Contact
                 </h3>
@@ -115,15 +116,15 @@ export const Footer = () => {
               </div>
             </div>
             {/* services and social section*/}
-            <div className="flex  justify-around ">
+            <div className="flex  justify-between ">
               {/* services */}
-              <div className="flex flex-col min-w-[120px]">
+              <div className="flex flex-col min-w-[100px]">
                 <h3 className="text-[21px] text-[#51634B] font-medium  text-left">
                   Services
                 </h3>
                 <ul className="flex flex-col gap-1 text-left">
                   <li className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]">
-                    Orthodontie (ODF)
+                    Orthodontie
                   </li>
                   <li className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]">
                     Cosmetic
@@ -135,7 +136,7 @@ export const Footer = () => {
               </div>
 
               {/* Social */}
-              <div className="flex flex-col min-w-[120px]">
+              <div className="flex flex-col min-w-[210px]">
                 <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
                   Social
                 </h3>
@@ -201,14 +202,27 @@ export const Footer = () => {
           </div>
         )}
         {/* Floating phone button */}
-        <button
+        <motion.button
           className="fixed bottom-[120px] right-6 z-50 flex items-center justify-center w-[47px] h-[47px] rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none shadow-lg"
           aria-label="Afficher les numéros de téléphone"
           type="button"
           onClick={() => setShowPhonePanel((v) => !v)}
+          drag
+          dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
+          dragElastic={0.5}
+          dragTransition={{ bounceStiffness: 500, bounceDamping: 25 }}
+          whileDrag={{ scale: 1.1, boxShadow: "0 10px 25px rgba(0,0,0,0.3)" }}
+          whileTap={{ scale: 0.95 }}
+          dragSnapToOrigin
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 300,
+            mass: 1,
+          }}
         >
           <FiPhone className="text-[#F7F7F5]" size={28} />
-        </button>
+        </motion.button>
       </div>
     </>
   );
