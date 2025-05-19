@@ -1,0 +1,6 @@
+/* Custom utility class to use Animate.css fadeInUp animation with a single class */
+@import 'animate.css';
+
+.animate-fade-in-up {
+  @apply animate__animated animate__fadeInUp;
+} 

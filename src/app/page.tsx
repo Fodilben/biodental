@@ -24,11 +24,11 @@ export default function Page() {
           </div>
           {/* Testimonials Section */}
           <About />
-          <GallerySectionClient />
+          {/* <GallerySectionClient /> */}
           <Features />
           <Services />
           <Reviews />
-          <FAQ />
+        <FAQ />
         </div>
       </div>
       <CTA />

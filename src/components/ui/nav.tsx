@@ -17,20 +17,20 @@ const PHONE_NUMBERS = [
   "06 59 77 27 37",
 ];
 
-export  function PhonePopup({ open }: { open: boolean }) {
+export  function PhonePopup({ open }: { open: boolean  } ) {
   
   return (
     <div
-      className="absolute top-[60px] right-0 z-50 flex flex-col rounded-xl shadow-lg bg-[#9aad92]/90 border border-[#e0e7db] min-w-[230px]"
+      className={`fixed w-[192px] border border-white top-[70px] right-[100px]  z-[100] flex flex-col rounded-xl shadow-lg bg-[#9aad92]/90 min-w-[192px] h-[100px] `}
       style={{ boxShadow: "0 4px 24px 0 #0002" }}
     >
       {PHONE_NUMBERS.map((num, idx) => (
         <a
           key={num}
           href={`tel:${num.replace(/\s/g, "")}`}
-          className={`flex items-center gap-2 px-6 py-4 text-lg text-[#243520] font-medium ${idx === 0 ? "rounded-t-xl" : ""} ${idx === PHONE_NUMBERS.length - 1 ? "rounded-b-xl" : "border-t border-[#e0e7db]"}`}
+          className={`flex border border-white items-center gap-2 px-6 h-1/2 text-[17px] text-[#000] font-medium ${idx === 0 ? "rounded-t-xl" : ""} ${idx === PHONE_NUMBERS.length - 1 ? "rounded-b-xl" : "border-t border-[#e0e7db]"}`}
         >
-          <FiPhone className="text-[#243520]" size={22} />
+          <FiPhone className="text-[#fff]" size={18} />
           {num}
         </a>
       ))}
@@ -44,10 +44,10 @@ export const Nav = () => {
 
   return (
     <>
-      <nav className="fixed  w-[340px]  md:max-w-[670px]  h-16 top-[8px] left-1/2 -translate-x-1/2 z-[100] md:w-full lg:w-full">
+      <nav className="fixed  w-[340px]  md:max-w-[670px]  h-16 top-[8px] left-1/2 -translate-x-1/2 z-[90] md:w-full lg:w-full">
         <Card className="h-16 bg-[#9aad92]/55 backdrop-blur-[5px] rounded-[50px] overflow-hidden border-[2px] border-[#F7F7F5]">
           <CardContent className="p-0">
-            <div className="relative w-full h-16 rounded-[50px] flex items-center justify-between px-6">
+            <div className=" w-full h-16 rounded-[50px] flex items-center justify-between px-6">
               <img src="./logo.webp" alt="BioDental" className="h-8" />
               <div className="hidden md:flex gap-7 ">
                 {navItems.map((item, index) => (
@@ -78,13 +78,7 @@ export const Nav = () => {
                   <FiMenu className="text-[#000]" size={28} />
                 </button>
                 {/* Overlay for click-away */}
-                {showPhone && (
-                  <div
-                    className="fixed inset-0 z-40"
-                    onClick={() => setShowPhone(false)}
-                    aria-label="Fermer le popup téléphone"
-                  />
-                )}
+
                 <PhonePopup open={showPhone} />
               </div>
             </div>
@@ -94,7 +88,7 @@ export const Nav = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed top-[8px] left-1/2 -translate-x-1/2 z-[200] flex flex-col bg-[#9aad92] rounded-xl px-2 py-1 gap-4 w-[340px] md:max-w-[670px] md:w-full animate-slideDownAndFadeIn"
+          className="fixed top-[8px] left-1/2  py-2 -translate-x-1/2 z-[200] flex flex-col bg-[#9aad92] rounded-xl px-2 gap-4 w-[340px] md:max-w-[670px] md:w-full animate-slideDownAndFadeIn"
           style={{ height: "auto" }}
         >
           <div className="flex items-center justify-between  max-h-[100px] px-2">
@@ -110,7 +104,7 @@ export const Nav = () => {
               <FiX />
             </button>
           </div>
-          <div className="flex flex-col items-center gap-5 flex-1 justify-center">
+          <div className="flex flex-col items-center gap-5 flex-1 justify-center mb-4">
             {navItems.map((item, index) => (
               <a
                 key={index}
@@ -122,7 +116,7 @@ export const Nav = () => {
               </a>
             ))}
           </div>
-          <div className="flex justify-end pr-4 pb-4">
+          {/* <div className="flex justify-end pr-4 pb-4">
             <button
               onClick={() => setShowPhone((v) => !v)}
               className="flex items-center justify-center w-[43px] h-[43px] rounded-full bg-[#243520] hover:bg-[#222] transition-colors duration-150 focus:outline-none"
@@ -131,9 +125,11 @@ export const Nav = () => {
             >
               <FiPhone className="text-[#F7F7F5]" size={25} />
             </button>
-          </div>
+             
+          </div> */}
         </div>
       )}
+      {showPhone && <PhonePopup open={showPhone}  />}
     </>
   );
 };

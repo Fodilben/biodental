@@ -1,11 +1,20 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ServicesSec = () => {
-  return (
+  return (  
     <section className="max-w-[1000px] mx-auto bg-transparent px-[20px] md:px-0 py-16 flex flex-col items-center">
-      <h2 className="text-[2.5rem] md:text-[2.8rem] font-bold font-playfair-important text-[#243520] mb-8 text-center">
-        Nos services complets ..
-      </h2>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, type: "spring" }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <h2 className="text-[2.5rem] md:text-[2.8rem] font-bold font-playfair-important text-[#243520] mb-8 text-center">
+          Nos services complets ..
+        </h2>
+      </motion.div>
       <div className=" rounded-xl border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px] md:p-8  gap-8 shadow-md">
         <div className="flex-1 flex justify-center items-center  min-w-full md:min-w-[320px] ">
           <Image
@@ -91,8 +100,8 @@ const ServicesSec = () => {
       <div className=" rounded-xl mt-16 border-[3px] border-[#F7F7F5] max-w-[95vw] w-full flex flex-col md:flex-row p-[32px] md:p-8 gap-8 shadow-md">
         <div className="flex-1  px-2 md:pl-0 md:pr-0  ">
           <h3 className="text-2xl md:text-3xl font-semibold text-[#243520] mb-5 ">
-            4.Chirurgie orale et pathologie  
-        </h3>
+            4.Chirurgie orale et pathologie
+          </h3>
           <p className="text-base md:text-[16px] text-[#F7F7F5] font-normal leading-relaxed">
             BioDental offre des services complets de chirurgie et de pathologie
             buccales pour traiter les affections dentaires complexes. Notre
@@ -133,7 +142,15 @@ const ServicesSec = () => {
             5. ODF orthodontique
           </h3>
           <p className="text-base md:text-lg text-[#F7F7F5] font-normal leading-relaxed space-y-1">
-           Nos services d'orthodontie visent à corriger les malocclusions dentaires et des mâchoires, améliorant ainsi la fonction et l'apparence. Nous proposons diverses options de traitement, y compris les broches traditionnelles et les aligneurs transparents, adaptées aux besoins uniques de chaque patient. En traitant les problèmes tels que l'encombrement, l'espacement et les irrégularités de l'occlusion, nous aidons les patients à obtenir un sourire harmonieux et confiant. L'intervention précoce et les plans de soins personnalisés sont des éléments clés de notre approche orthodontique
+            Nos services d'orthodontie visent à corriger les malocclusions
+            dentaires et des mâchoires, améliorant ainsi la fonction et
+            l'apparence. Nous proposons diverses options de traitement, y
+            compris les broches traditionnelles et les aligneurs transparents,
+            adaptées aux besoins uniques de chaque patient. En traitant les
+            problèmes tels que l'encombrement, l'espacement et les irrégularités
+            de l'occlusion, nous aidons les patients à obtenir un sourire
+            harmonieux et confiant. L'intervention précoce et les plans de soins
+            personnalisés sont des éléments clés de notre approche orthodontique
           </p>
         </div>
       </div>

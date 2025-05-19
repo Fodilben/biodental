@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
+import { motion } from "framer-motion";
 
 export const AboutSec = () => {
   const doctorInfo = {
@@ -15,7 +17,13 @@ export const AboutSec = () => {
 
   return (
     <section className="w-full py-20 bg-[#9aae92] px-8 md:px-8 lg:px-0">
-      <div className="container flex flex-col md:flex-row items-start gap-[50px] max-w-[1000px] mx-auto">
+      <motion.div 
+       className="container flex flex-col md:flex-row items-start gap-[50px] max-w-[1000px] mx-auto"
+       initial={{ opacity: 0, y: 50 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       transition={{ duration: 1.2, type: "spring" }}
+       viewport={{ once: true, amount: 0.2 }}
+      >
         <div
           className="relative w-full md:w-[358px] h-[440px] rounded-[1000px_1000px_8px_8px] bg-cover bg-center order-2 md:order-1"
           style={{ backgroundImage: "url(..//image-7.png)" }}
@@ -71,7 +79,7 @@ export const AboutSec = () => {
             </CardContent>
           </Card>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

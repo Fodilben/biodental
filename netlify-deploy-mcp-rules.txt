@@ -1,0 +1,28 @@
+Netlify Deploy MCP Rules
+========================
+
+1. Specify a Supported Node.js Version
+   - Add a `.nvmrc` file at the root of your project with a supported Node.js version (e.g., `20.11.1`).
+   - Add an `engines` field in your `package.json`:
+     "engines": {
+       "node": ">=20.0.0 <21.0.0"
+     }
+
+2. Ignore Non-Critical Warnings
+   - Warnings about future deprecations (like the `mise` warning) do not break builds and can be ignored unless they become errors in the future.
+
+3. Monitor for Real Errors
+   - Always check the full Netlify build log for actual errors, not just warnings.
+   - If a build fails, look for lines with `Error:` or `Failed to compile.`
+
+4. Keep Dependencies Up to Date
+   - Regularly update your dependencies and Node.js version to stay compatible with Netlify and Next.js requirements.
+
+5. (Optional) Silence the mise Warning
+   - If you want to silence the `mise` warning, you can add a Netlify build environment variable or run the following command locally (if you use `mise`):
+     mise settings add idiomatic_version_file_enable_tools node
+   - This is not required for your build to succeed.
+
+---
+
+If you encounter a new error, always check the full log and update these rules as needed. 

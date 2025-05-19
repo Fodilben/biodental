@@ -5,7 +5,7 @@ interface ReviewCardProps {
   name: string;
   rating: number;
   text: string;
-  platform?: "google" | "instagram";
+  platform?: "google" | "instagram" | "facebook";
 }
 
 export const ReviewCard = ({
@@ -24,10 +24,16 @@ export const ReviewCard = ({
           alt="google maps"
           className="w-[35px] h-[35px]"
         />
-      ) : (
+      ) : platform === "instagram" ? (
         <img
           src="/icons/instagram.avif"
           alt="instagram"
+          className="w-[35px] h-[35px]"
+        />
+      ) : (
+        <img
+          src="/icons/facebook.avif"
+          alt="facebook"
           className="w-[35px] h-[35px]"
         />
       )}
@@ -51,10 +57,18 @@ export const ReviewCard = ({
       </div>
     </div>
     {/* Avatar and name */}
-    <div className="flex items-center gap-2 mt-auto">
-      <div className="w-[37px] h-[37px] rounded-full bg-[#e15b64] flex items-center justify-center text-lg font-bold text-white">
-        {avatar}
-      </div>
+    <div className="flex items-center gap-1 mt-auto">
+      {avatar.endsWith('.png') || avatar.endsWith('.jpg') || avatar.endsWith('.jpeg') ? (
+        <img
+          src={avatar}
+          alt={name}
+          className="w-[37px] h-[37px] rounded-full object-cover bg-[#e15b64]"
+        />
+      ) : (
+        <div className="w-[37px] h-[37px] rounded-full bg-[#e15b64] flex items-center justify-center text-lg font-bold text-white">
+          {avatar}
+        </div>
+      )}
       <span className="text-[12px] text-[#243520] opacity-70 font-medium ml-2">
         {name}
       </span>
