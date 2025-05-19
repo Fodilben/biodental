@@ -53,9 +53,9 @@ export const Footer = () => {
           {/* Footer Navigation Sections */}
           <div className="flex flex-col md:flex-row  pl-3 justify-between gap-8 sm:order-first md:order-last">
             {/* lines and contact section*/}
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-around">
               {/* lines */}
-              <div className="flex flex-col min-w-[140px]">
+              <div className="flex flex-col min-w-[120px]">
                 <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
                   Liens
                 </h3>
@@ -115,9 +115,9 @@ export const Footer = () => {
               </div>
             </div>
             {/* services and social section*/}
-            <div className="flex  gap-6 ">
+            <div className="flex  justify-around ">
               {/* services */}
-              <div className="flex flex-col min-w-[140px]">
+              <div className="flex flex-col min-w-[120px]">
                 <h3 className="text-[21px] text-[#51634B] font-medium  text-left">
                   Services
                 </h3>
