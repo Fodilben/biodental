@@ -52,8 +52,9 @@ export const Footer = () => {
           </div>
           {/* Footer Navigation Sections */}
           <div className="flex flex-col md:flex-row  pl-3 justify-between gap-8 sm:order-first md:order-last">
-            {/* Services and contact section*/}
+            {/* Services and liens section*/}
             <div className="flex gap-2">
+              {/* services */}
               <div className="flex flex-col min-w-[140px]">
                 <h3 className="text-[21px] text-[#51634B] font-medium  text-left">
                   Services
@@ -70,7 +71,29 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-              {/* Liens */}
+              {/* contact */}
+              <div className="flex flex-col min-w-[180px]">
+                <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
+                  Contact
+                </h3>
+                <ul className="flex flex-col gap-1 text-left">
+                  <li className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]">
+                    +213 7 87 90 78 32
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:biodental.dr.fetnaci@gmail.com"
+                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]"
+                    >
+                      biodental.dr.fetnaci@gmail.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {/* contact and social section*/}
+            <div className="flex  gap-6 ">
+              {/* liens */}
               <div className="flex flex-col min-w-[140px]">
                 <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
                   Liens
@@ -106,26 +129,6 @@ export const Footer = () => {
                       className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]"
                     >
                       témoignages
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex  gap-6 ">
-              <div className="flex flex-col min-w-[180px]">
-                <h3 className="text-[21px] text-[#51634B]  font-normal mb-1 text-left">
-                  Contact
-                </h3>
-                <ul className="flex flex-col gap-1 text-left">
-                  <li className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]">
-                    +213 7 87 90 78 32
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:biodental.dr.fetnaci@gmail.com"
-                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]"
-                    >
-                      biodental.dr.fetnaci@gmail.com
                     </a>
                   </li>
                 </ul>

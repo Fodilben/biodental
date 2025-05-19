@@ -4,13 +4,15 @@ import { FAQ } from "../components/homeSections/FAQ/FAQ";
 import { Services } from "../components/homeSections/services/Services";
 import { About } from "../components/homeSections/about/about";
 import { CTA } from "../components/homeSections/CTA/CTA";
-import  {Features}  from "../components/homeSections/features/Features";
+import { Features } from "../components/homeSections/features/Features";
 import { Hero } from "../components/homeSections/hero/hero";
 import { Reviews } from "@/components/homeSections/reviews/page";
 import dynamic from "next/dynamic";
 import GallerySectionClient from "../components/GallerySectionClient";
 
-const GallerySection = dynamic(() => import("../components/testimonialSections/GallerySection"));
+const GallerySection = dynamic(
+  () => import("../components/testimonialSections/GallerySection")
+);
 
 export default function Page() {
   return (
@@ -28,11 +30,11 @@ export default function Page() {
           <Features />
           <Services />
           <Reviews />
-        <FAQ />
+          <FAQ />
         </div>
       </div>
       <CTA />
       <Footer />
     </div>
   );
-} 
+}
