@@ -21,7 +21,7 @@ export  function PhonePopup({ open }: { open: boolean  } ) {
   
   return (
     <div
-      className={`fixed w-[192px] border border-white top-[70px] right-[100px]  z-[100] flex flex-col rounded-xl shadow-lg bg-[#9aad92]/90 min-w-[192px] h-[100px] `}
+      className={`fixed w-[192px] border border-white top-[70px] right-[20%]  z-[100] flex flex-col rounded-xl shadow-lg bg-[#9aad92]/90 min-w-[192px] h-[100px] `}
       style={{ boxShadow: "0 4px 24px 0 #0002" }}
     >
       {PHONE_NUMBERS.map((num, idx) => (
