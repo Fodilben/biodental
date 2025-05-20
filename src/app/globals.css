@@ -52,3 +52,8 @@ body {
   letter-spacing: 0.5px;
 }
 
+
+.nav-background {
+  background:  radial-gradient(#9aad92 60%, #fff 100%);
+  opacity: 0.9;
+}
