@@ -25,6 +25,7 @@
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
     "nodemailer": "^7.0.3",
+    "phosphor-react": "^1.4.1",
     "react": "^19.0.0",
     "react-before-after-slider-component": "^1.1.8",
     "react-dom": "^19.0.0",
