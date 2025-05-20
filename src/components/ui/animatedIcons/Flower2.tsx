@@ -6,14 +6,14 @@ interface HealthProps {
   className?: string;
 }
 
-export default function Flower2({ className = "w-[140px] h-[140px]" }: HealthProps) {
+export default function Flower2() {
   return (
-    <div className={className}>
+    <div className="w-[140px] ml-[-18px]">
       <Player
         autoplay
         loop
         src={animationData}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%" , width : "140px"}}
       />
     </div>
   );
