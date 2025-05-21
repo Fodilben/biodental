@@ -1,10 +1,11 @@
 import React from "react";
-import PlaceIcon from '@mui/icons-material/Place';
-import EmailIcon from '@mui/icons-material/Email';
-import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
+import { IoMdStopwatch, IoMdMail } from "react-icons/io";
+import { MdLocalPhone as PhoneIcon } from "react-icons/md";
+import { FaMapMarkerAlt as PlaceIcon } from "react-icons/fa";
+
 const Contact = () => {
   return (
-    <section className="w-full  bg-[#F7F7F5] flex flex-col items-center justify-center py-20 px-4">
+    <section className="w-full  bg-[#fff] flex flex-col items-center justify-center py-20 px-4">
       {/* Title */}
       <h1 className="font-playfair-important  text-[34px] md:text-[50px] text-[#243520] font-bold mb-10 text-center">
         Contact
@@ -14,9 +15,6 @@ const Contact = () => {
         <div className="flex-1 flex flex-col gap-6 min-w-[300px] max-w-[400px] mt-10 mx-auto md:mx-0">
           {/* Address */}
           <div className="flex items-center gap-3">
-            <span className="mt-1">
-              <PlaceIcon style={{ color: "#697C63" }} />
-            </span>
             <div className="text-[18px] text-[#222] leading-snug">
               8 mars, plaine ouest, cité 1172 lgts,
               <br />
@@ -28,7 +26,7 @@ const Contact = () => {
             {/* Email */}
             <div className="flex items-center gap-3 my-2">
               <span className="mt-1">
-                <EmailIcon style={{ color: "#697C63" }} />
+                <IoMdMail style={{ color: "#697C63" }} fontSize={18} />
               </span>
               <a
                 href="mailto:biodental.dr.fetnaci@gmail.com"
@@ -38,14 +36,9 @@ const Contact = () => {
               </a>
             </div>
             {/* Phone */}
-            <div className="flex items-center  gap-3">
+            <div className="flex items-baseline  gap-3">
               <span className="mt-1">
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" style={{ color: "#3A4B35" }}>
-                  <path
-                    fill="#3A4B35"
-                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"
-                  />
-                </svg>
+                <PhoneIcon style={{ color: "#697C63" }} fontSize={18} />
               </span>
               <a
                 href="tel:+2130659772737"
@@ -58,13 +51,13 @@ const Contact = () => {
           {/* Working hours */}
           <div className="flex items-start gap-3 mt-2">
             <span className="mt-1">
-              <TimerOutlinedIcon style={{ color: "#2B3029" }} />
+              <IoMdStopwatch style={{ color: "#2B3029", fontSize: 25 }} />
             </span>
             <div>
-              <div className="text-[18px] font-semibold text-[#243520] mb-1">
+              <div className="text-[24px] font-medium text-[#243520] mb-1">
                 Working hours:
               </div>
-              <div className="text-[16px] text-[#222]">
+              <div className="text-[18px] text-[#222]">
                 Saturday – Thursday
                 <br />
                 9:00am to 6:00pm

@@ -87,7 +87,7 @@ const SendMessage = () => {
             type="text"
             autoComplete="name"
             className="w-full px-4 py-2 rounded-md bg-transparent border border-white focus:border-white focus:ring-2 focus:ring-white/30 outline-none text-white placeholder:text-white transition"
-            placeholder="Votre nom..."
+            
             required
             value={form.name}
             onChange={handleChange}
@@ -107,7 +107,7 @@ const SendMessage = () => {
             type="email"
             autoComplete="email"
             className="w-full px-4 py-2 rounded-md bg-transparent border border-white focus:border-white focus:ring-2 focus:ring-white/30 outline-none text-white placeholder:text-white transition"
-            placeholder="Votre e-mail..."
+           
             required
             value={form.email}
             onChange={handleChange}
@@ -138,7 +138,7 @@ const SendMessage = () => {
         )}
         <button
           type="submit"
-          className="w-full bg-[#222] text-white rounded-md py-2 font-semibold hover:bg-[#333] transition mt-2 flex items-center justify-center min-h-[44px]"
+          className="w-full bg-[#222] text-white rounded-md py-2 text-[14px] font-semibold hover:bg-[#333] transition mt-2 flex items-center justify-center min-h-[44px]"
           disabled={buttonState === "loading"}
         >
           {buttonState === "loading" && <Spinner />}
