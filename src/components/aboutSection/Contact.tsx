@@ -1,8 +1,7 @@
 import React from "react";
-import MapIcon from "../ui/MapIcon";
-import EmailIcon from "../ui/EmailIcon";
-import ClockIcon from "../ui/ClockIcon";
-
+import PlaceIcon from '@mui/icons-material/Place';
+import EmailIcon from '@mui/icons-material/Email';
+import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 const Contact = () => {
   return (
     <section className="w-full  bg-[#F7F7F5] flex flex-col items-center justify-center py-20 px-4">
@@ -16,7 +15,7 @@ const Contact = () => {
           {/* Address */}
           <div className="flex items-center gap-3">
             <span className="mt-1">
-              <MapIcon style={{ color: "#697C63" }} />
+              <PlaceIcon style={{ color: "#697C63" }} />
             </span>
             <div className="text-[18px] text-[#222] leading-snug">
               8 mars, plaine ouest, cité 1172 lgts,
@@ -59,7 +58,7 @@ const Contact = () => {
           {/* Working hours */}
           <div className="flex items-start gap-3 mt-2">
             <span className="mt-1">
-              <ClockIcon style={{ color: "#2B3029" }} />
+              <TimerOutlinedIcon style={{ color: "#2B3029" }} />
             </span>
             <div>
               <div className="text-[18px] font-semibold text-[#243520] mb-1">
