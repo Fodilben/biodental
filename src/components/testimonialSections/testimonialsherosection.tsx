@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import * as React from "react";
-import  { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../../components/ui/button";
 
 import Image from "next/image";
@@ -55,31 +55,30 @@ const initialImages = [
   },
 ];
 
-
 export default function TestimonialHeroSection() {
-   const [showPopup, setShowPopup] = useState(false);
-   const btnRef = useRef<HTMLButtonElement>(null);
-   const popupRef = useRef<HTMLDivElement>(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
   return (
-    <section className="w-full bg-[#9aae92] flex justify-center items-center pt-[140px] pb-[60px] lg:py-[40px] h-full md:h-[100vh] overflow-hidden">
-      <div className="max-w-6xl  md:pt-10 w-full mx-auto flex flex-col md:flex-row gap-8 md:gap-0 px-4 md:px-12 lg:px-4 items-center justify-center ">
+    <section className="w-full bg-[#9aae92] flex justify-center items-center pt-[140px] pb-[60px]  xl:py-[40px] h-full xl:h-[100vh] overflow-hidden">
+      <div className="max-w-6xl  xl:pt-10 w-full mx-auto flex flex-col xl:flex-row gap-8 xl:gap-0 px-[24px]  items-center justify-center ">
         {/* Left content */}
-        <div className="flex-1 flex flex-col justify-center md:justify-start md:pt-11 z-10 text-center md:text-left">
-          <div className="w-full md:max-w-xl lg:max-w-2xl">
-            <h1 className="font-playfair-important font-black text-[34px] md:text-[50px] leading-[1.1] text-[#2B3029] text-center md:text-left mb-5">
+        <div className="flex-1 flex flex-col justify-center xl:justify-start xl:pt-11 z-10 text-center xl:text-left">
+          <div className="w-full xl:max-w-xl xl:lg:max-w-2xl">
+            <h1 className="font-playfair-important font-black text-[34px] xl:text-[50px] leading-[1.2] tracking-[-0.8px] md:tracking-[0px] text-[#2B3029] text-center xl:text-left mb-5">
               Sourires authentiques,
               <br />
               histoires <span className="text-[#f7f7f5]">vraies</span> et de
               <br />
               nouvelles vies
             </h1>
-            <p className="text-[#F7F7F5] text-[24px]   space-y-1  mb-8">
+            <p className="text-[#F7F7F5] text-[24px]  leading-[1.2]  mb-8 font-medium">
               <span className="text-[#2B3029]"> Découvrez</span> le confort et
               la confiance que nos soins dentaires personnalisés ont apportés à
               des personnes de tous âges.
             </p>
             <div
-              className="relative flex flex-col items-center md:items-start p-1"
+              className="relative flex flex-col items-center xl:items-start p-1"
               onMouseLeave={() => setShowPopup(false)}
             >
               <Button
@@ -103,14 +102,14 @@ export default function TestimonialHeroSection() {
           </div>
         </div>
         {/* Right: Static Images */}
-        <div className="relative flex-1 flex items-center justify-center w-full h-full min-h-[350px] md:min-h-[420px]">
+        <div className="relative flex-1 flex items-center justify-center w-full h-full min-h-[350px] md:w-[350px]   xl:min-h-[420px]">
           {/* Top image (child) */}
           <motion.img
             src="/TESI-PAGE/t-hero-1.png"
             alt="Smile 1"
             width={200}
             height={236}
-            className="absolute w-[205px] md:w-[190px] h-[160px] md:h-[236px] rounded-[32px] z-30 left-1/2 top-6 -translate-x-1/2 rotate-[-13deg] shadow-2xl object-cover cursor-grab"
+            className="absolute w-[205px] xl:w-[190px] h-[160px] xl:h-[236px] rounded-[32px] z-30 left-1/2 top-6 -translate-x-1/2 rotate-[-13deg] shadow-2xl object-cover cursor-grab"
             style={{ boxShadow: "0 8px 32px 0 rgba(60, 80, 60, 0.18)" }}
             drag
             dragElastic={0.2}
@@ -124,7 +123,7 @@ export default function TestimonialHeroSection() {
             alt="Smile 2"
             width={300}
             height={140}
-            className="absolute w-[230px] md:w-[295px] h-[100px] md:h-[140px] z-20 left-[-10px] md:left-[40px] bottom-[48px] md:bottom-4 rotate-[304deg] md:rotate-[-30deg] rounded-t-[50px] rounded-br-[50px] shadow-xl object-cover cursor-grab"
+            className="absolute w-[230px] xl:w-[295px] h-[100px] xl:h-[140px] z-20 left-[-10px] xl:left-[40px] bottom-[48px] xl:bottom-4 rotate-[304deg] xl:rotate-[-30deg] rounded-t-[50px] rounded-br-[50px] shadow-xl object-cover cursor-grab"
             style={{ boxShadow: "0 8px 32px 0 rgba(60, 80, 60, 0.18)" }}
             drag
             dragElastic={0.2}
@@ -138,7 +137,7 @@ export default function TestimonialHeroSection() {
             alt="Smile 3"
             width={260}
             height={140}
-            className="absolute w-[200px] md:w-[260px]  h-[90px] md:h-[140px] z-10 right-0 bottom-[49px] md:bottom-7 rotate-[25deg] rounded-tr-[50px] rounded-bl-[50px] shadow-xl object-cover cursor-grab"
+            className="absolute w-[200px] xl:w-[260px]  h-[90px] xl:h-[140px] z-10 right-0 bottom-[49px] xl:bottom-7 rotate-[25deg] xl:rotate-[25deg] rounded-tr-[50px] rounded-bl-[50px] shadow-xl object-cover cursor-grab"
             style={{ boxShadow: "0 8px 32px 0 rgba(60, 80, 60, 0.18)" }}
             drag
             dragElastic={0.2}
