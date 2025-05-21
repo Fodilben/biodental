@@ -25,7 +25,7 @@ const MoreImagesSection = () => {
           {/* Left: Video */}
           <div
             ref={video1.containerRef}
-            className="w-full md:col-span-2 h-[420px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md"
+            className="w-full md:col-span-2 h-fit  md:h-[420px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md"
             style={{ marginRight: "100px" }}
           >
             <video
@@ -52,10 +52,7 @@ const MoreImagesSection = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-12">
-          <div
-            
-            className="w-full h-[630px] md:row-span-2 rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md"
-          >
+          <div className="w-full h-[630px] md:row-span-2 rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
             <Image
               src="/tesi-page/t-hero-1.png"
               alt="Center hero"
@@ -65,7 +62,7 @@ const MoreImagesSection = () => {
               priority
             />
           </div>
-          <div className="w-full md:col-span-2 h-[300px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
+          <div className="w-full md:col-span-2 h-fit  md:h-[300px] rounded-[32px] overflow-hidden bg-[#F7F7F5]/10 shadow-md">
             <Image
               src="/tesi-page/t-hero-4.png"
               alt="Bottom left hero"
@@ -77,7 +74,7 @@ const MoreImagesSection = () => {
           </div>
           <div
             ref={video2.containerRef}
-            className="w-full md:col-span-2 h-[300px] rounded-[32px]  overflow-hidden bg-[#F7F7F5]/10 shadow-md"
+            className="w-full md:col-span-2  h-fit  md:h-[300px] rounded-[32px]  overflow-hidden bg-[#F7F7F5]/10 shadow-md"
           >
             <video
               ref={video2.videoRef}
