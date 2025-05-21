@@ -8,9 +8,11 @@ import {
   AccordionTrigger,
 } from "../../ui/accordion";
 import { Card, CardContent } from "../../ui/card";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-const MotionCard = motion(Card);
+const MotionContent = motion(CardContent);
+const MotionAccordionContent = motion(AccordionContent);
+
 export const FAQ = () => {
   // FAQ data for mapping
   const faqItems = [
@@ -39,37 +41,49 @@ export const FAQ = () => {
         </div>
 
         {/* FAQ Card */}
-        <MotionCard
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, type: "spring" }}
-          viewport={{ once: true, amount: 0.2 }}
-           className="rounded-2xl border-2 border-solid border-[#f7f7f5] mt-0   md:mt-8  pt-5 md:pt-14"
-        >
-              <CardContent className="p-8">
-                <Accordion type="single" collapsible className="w-full">
-                  {faqItems.map((item, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`item-${index}`}
-                      className="border-t border-[#f7f7f5] py-2"
-                    >
-                      <AccordionTrigger className="flex items-center gap-6 hover:no-underline group">
-                        <span className="relative flex items-center justify-center">
-                          <AiOutlinePlus className="h-[30px] w-[30px] flex-shrink-0 text-white transition-transform duration-300 group-data-[state=open]:rotate-45" />
-                        </span>
-                        <span className="text-left text-[20px] md:text-[22px] font-medium text-[#2b3029]  ">
-                          {item.question}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="pl-[54px] transition-all duration-500 ease-in-out data-[state=open]:opacity-100 data-[state=open]:translate-y-0 data-[state=closed]:opacity-0 data-[state=closed]:-translate-y-2  text-[16px] md:text-[17.3px] md:tracking-[0.18px] md:leading-[25.2px]">
+        <Card className="rounded-2xl border-2 border-solid border-[#f7f7f5] mt-0   md:mt-8  pt-5 md:pt-14">
+          <MotionContent
+            className="p-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, type: "spring" }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="border-t border-[#f7f7f5] py-2"
+                >
+                  <AccordionTrigger className="flex items-center gap-6 hover:no-underline group">
+                    <span className="relative flex items-center justify-center">
+                      <AiOutlinePlus className="h-[30px] w-[30px] flex-shrink-0 text-white transition-transform duration-300 group-data-[state=open]:rotate-45" />
+                    </span>
+                    <span className="text-left text-[20px] md:text-[22px] font-medium text-[#2b3029]">
+                      {item.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent 
+                    className="relative text-[16px] md:text-[17.3px] md:tracking-[0.18px] md:leading-[25.2px] data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up overflow-hidden"
+                  >
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                         className="pt-4 border-t border-[#f7f7f5]"
+                      >
+                    <div className="pl-[54px]">
                         {item.answer || "Content not provided"}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-        </MotionCard>
+                    </div>
+                      </motion.div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </MotionContent>
+        </Card>
       </div>
     </div>
   );

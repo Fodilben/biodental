@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
-
+import "@/app/globals.css";
 const navItems = [
   { label: "Accueil", path: "/" },
   { label: "À propos", path: "/about" },
@@ -39,19 +39,19 @@ export const Nav = () => {
 
   return (
     <>
-      <nav className="fixed  w-[340px]  md:max-w-[670px]  h-16 top-[8px] left-1/2 -translate-x-1/2 z-[90] md:w-full lg:w-full">
-        <Card className="h-16 bg-[#9aad92]/55 backdrop-blur-[5px] rounded-[50px] overflow-hidden border-[2px] border-[#F7F7F5]">
+      <nav className="fixed  w-[340px]  md:max-w-[670px]  h-16 top-[8px] left-1/2 -translate-x-1/2 z-[50] md:w-full lg:w-full">
+        <Card className="h-16  bg-[#9aad92]/60   backdrop-blur-[10px] rounded-[50px] z-[40] overflow-hidden border-[2px] border-[#F7F7F5]">
           <CardContent className="p-0">
             <div className=" w-full h-16 rounded-[50px] flex items-center justify-between px-6">
               <a href="/">
-                <img src="./logo.webp" alt="BioDental" className="h-8" />
+                <img src="./logo.png" alt="BioDental" className=" w-[180px]" />
               </a>
-              <div className="hidden md:flex gap-7 ">
+              <div className="hidden md:flex gap-[20px] ">
                 {navItems.map((item, index) => (
                   <a
                     key={index}
                     href={item.path}
-                    className="font-medium text-[#f7f7f5] text-[14px] hover:underline focus:underline transition-colors duration-150"
+                    className="font-medium text-[#f7f7f5] text-[14px] hover:underline hover:text-[#222] focus:underline transition-colors hover:duration-500 duration-300"
                   >
                     {item.label}
                   </a>
@@ -82,6 +82,7 @@ export const Nav = () => {
           </CardContent>
         </Card>
       </nav>
+
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div

@@ -64,16 +64,15 @@ export const Features = ({ issevice }: { issevice?: boolean }) => {
         </h2>
 
         <div className="flex flex-col  justify-center gap-8 w-full md:max-w-[480px] mx-auto">
-          {featureCards.map((card) => (
+          {featureCards.map((card, ind) => (
             <Card
               key={card.id}
               className={`rounded-xl overflow-hidden border-2 ${card.borderColor} shadow-none`}
             >
-              <CardContent className="pt-[16px] pb-[24px] md:py-[20px]  px-[24px]  md:px-[16px]">
+              <CardContent className="pt-[16px] pb-[24px] md:py-[20px]  px-[24px]  md:px-[16px] ">
                 <div className="flex items-center gap-4">
-                  <div className=" flex items-center max-w-[100px] ">
-                    {card.lottieIcon}
-                  </div>
+                    <div className=   {`flex items-center w-[100px] h-[100px] overflow-visible`}>{card.lottieIcon}</div>
+                
                   <div className="flex flex-col gap-4 md:gap-6 w-full">
                     <h3 className="text-[#243520] text-[28px] leading-[33.6px] font-normal ">
                       {card.title}

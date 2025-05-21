@@ -71,9 +71,9 @@ const GallerySection = () => (
       </h2>
     </motion.div>
     <div
-      className="mx-auto grid gap-4 md:gap-x-6 md:gap-y-6"
+      className="mx-auto grid gap-4 md:gap-x-[100px] md:gap-y-[50px] w-full md:w-[83vw]"
       style={{
-        maxWidth: 1200,
+        maxWidth: 1150,
         gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
       }}
     >

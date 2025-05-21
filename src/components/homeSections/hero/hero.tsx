@@ -125,7 +125,7 @@ export const Hero = () => {
             className="mt-4 relative bg-[#243520] hover:bg-[#222] text-white rounded-lg py-2 shadow-[0px_0.71px_0.71px_-0.62px_#00000026,0px_1.81px_1.81px_-1.25px_#00000024,0px_3.62px_3.62px_-1.88px_#00000024,0px_6.87px_6.87px_-2.5px_#00000021,0px_13.65px_13.65px_-3.12px_#0000001a,0px_30px_30px_-3.75px_#0000000d] transition-colors duration-[400ms]"
             onClick={() => setShowPopup((v) => !v)}
           >
-            <span className="text-[16px] leading-[16.8px]  font-normal">
+            <span className="text-[16px] leading-[16.8px]  font-semibold">
               Prendre rendez-vous
             </span>
             {showPopup && (

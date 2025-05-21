@@ -8,7 +8,6 @@ const nextConfig = {
     unoptimized: true,
   },
   // Disable source maps in production to reduce bundle size
-  productionBrowserSourceMaps: false,
 };
 
 module.exports = nextConfig;
