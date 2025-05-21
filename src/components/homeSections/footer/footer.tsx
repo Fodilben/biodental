@@ -67,7 +67,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="text-[16px] text-[#0F1F0D] font-normal underline tracking-[-0.8px]"
+                      className="text-[16px] text-[#0F1F0D] font-normal underline tracking-[-0.8px] hover:underline"
                     >
                       Accueil
                     </a>
@@ -75,7 +75,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="/about"
-                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]"
+                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px] hover:underline"
                     >
                       À propos
                     </a>
@@ -83,7 +83,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="./services"
-                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]"
+                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px] hover:underline"
                     >
                       Services
                     </a>
@@ -91,7 +91,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="/testimonials"
-                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px]"
+                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.8px] hover:underline"
                     >
                       témoignages
                     </a>
@@ -110,7 +110,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="mailto:biodental.dr.fetnaci@gmail.com"
-                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.95px]"
+                      className="text-[16px] text-[#0F1F0D] font-normal tracking-[-0.95px] hover:underline"
                     >
                       biodental.dr.fetnaci@gmail.com
                     </a>
